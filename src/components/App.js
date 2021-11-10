@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/App.css";
-import GetFlight from "../requests/getToken";
+import GetFlight from "./GetFlight";
 
 function App() {
   return (
