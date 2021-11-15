@@ -4,6 +4,9 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import qs from "qs";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const GetToken = () => {
   const config = {
