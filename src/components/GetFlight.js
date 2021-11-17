@@ -19,29 +19,6 @@ const GetFlight = () => {
     )
     .then((response) => console.log(response))
     .catch((error) => console.log("error", error));
-
-  return (
-    <div>
-      <h1>Flight</h1>
-      <form className="get-flight__form">
-        <div className="get-flight__to">
-          <label htmlFor="to">To</label>
-          <input id="to" name="to" type="dropdown" placeholder="Anywhere" />
-          {/*
-              // value
-              // onChange */}
-        </div>
-
-        <div className="get-flight__from">
-          <label htmlFor="from">From</label>
-          <input id="from" name="from" type="text" />
-          {/*
-              // value
-              // onChange */}
-        </div>
-      </form>
-    </div>
-  );
 };
 
 export default GetFlight;

@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/SearchFlight.css";
 
 const SearchFlight = () => {
   return (
@@ -6,27 +7,27 @@ const SearchFlight = () => {
       <div className="search-form">
         <form>
           <div className="origin-input-box">
-            <label htmlFor="origin-input">
+            <label className="form-label" htmlFor="origin-input">
               Origin
               <input type="text" id="origin-input" name="origin-input" />
             </label>
           </div>
 
           <div className="dep-date-input-box">
-            <label htmlFor="dep-date-input">
+            <label className="form-label" htmlFor="dep-date-input">
               Depart date
               <input type="date" id="dep-date-input" name="dep-date-input" />
             </label>
           </div>
 
           <div className="ret-date-input-box">
-            <label htmlFor="ret-date-input">
+            <label className="form-label" htmlFor="ret-date-input">
               Return date
               <input type="date" id="ret-date-input" name="ret-date-input" />
             </label>
           </div>
 
-          <label htmlFor="passenger-select-input">
+          <label className="form-label" htmlFor="passenger-select-input">
             Passengers
             <select id="passenger-select-input" name="passenger-select-input">
               <option value="1">1</option>
@@ -36,7 +37,7 @@ const SearchFlight = () => {
             </select>
           </label>
 
-          <button type="submit">Search</button>
+          <button type="submit">Search flights</button>
         </form>
       </div>
     </div>
