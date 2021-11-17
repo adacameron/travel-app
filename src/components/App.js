@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import React from "react";
 import "../styles/App.css";
-import GetFlight from "./GetFlight";
 import GetToken from "../requests/GetToken";
 import SearchFlight from "./SearchFlight";
 
@@ -10,7 +9,6 @@ import SearchFlight from "./SearchFlight";
 function App() {
   return (
     <>
-      <GetFlight />
       <GetToken />
       <SearchFlight />
     </>

@@ -1,0 +1,32 @@
+.search-form-container {
+  padding: 20px;
+  background-color: rgb(62, 62, 146);
+  width: fit-content;
+  border-radius: 10px;
+  color: white;
+}
+
+input {
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.origin-input-box {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.dep-date-input-box {
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.ret-date-input-box {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.form-label {
+  display: inline-block;
+}
