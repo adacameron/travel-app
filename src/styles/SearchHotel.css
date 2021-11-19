@@ -16,18 +16,18 @@ input {
   margin: 5px;
 }
 
-.origin-input-box {
+.destination-input-box {
   display: inline-block;
   padding-right: 10px;
 }
 
-.dep-date-input-box {
+.check-in-input-box {
   display: inline-block;
   padding-left: 10px;
   padding-right: 10px;
 }
 
-.ret-date-input-box {
+.check-out-input-box {
   display: inline-block;
   padding-right: 10px;
 }
