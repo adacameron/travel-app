@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const getOriginSearch = (searchText) => {
+const getOriginSearch = (searchText, locationCode, departureDate, adults) => {
   let endpoint = "http://localhost:1338/";
 
   if (searchText) {
-    endpoint += `${searchText}`;
+    endpoint += `${searchText}/${locationCode}/${departureDate}/${adults}`;
   }
   return axios
     .get(endpoint)

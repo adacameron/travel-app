@@ -12,9 +12,12 @@ import getOriginSearch from "../requests/getOriginOffers";
 
 function App() {
   const [searchText, setSearchText] = useState("");
+  const [locationCode, setLocationCode] = useState("");
+  const [departureDate, setDepartureDate] = useState("");
+  const [adults, setAdults] = useState(0);
 
   const handleOriginSearch = () => {
-    getOriginSearch(searchText);
+    getOriginSearch(searchText, locationCode, departureDate, adults);
   };
 
   return (
@@ -28,6 +31,12 @@ function App() {
             <SearchFlight
               searchText={searchText}
               setSearchText={setSearchText}
+              locationCode={locationCode}
+              setLocationCode={setLocationCode}
+              departureDate={departureDate}
+              setDepartureDate={setDepartureDate}
+              adults={adults}
+              setAdults={setAdults}
               onSearch={handleOriginSearch}
             />
           }
