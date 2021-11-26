@@ -8,10 +8,12 @@ const amadeus = new Amadeus({
   clientSecret: CLIENT_SECRET,
 });
 
-router.get("/", (req, res) => {
+router.get("/:origin", (req, res) => {
+  const { origin } = req.params;
+
   amadeus.shopping.flightOffersSearch
     .get({
-      originLocationCode: "SYD",
+      originLocationCode: `${origin}`,
       destinationLocationCode: "BKK",
       departureDate: "2022-08-01",
       adults: "2",

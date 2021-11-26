@@ -1,7 +1,16 @@
 import React from "react";
 import "../styles/SearchFlight.css";
+import PropTypes from "prop-types";
+import getOffers from "../requests/getOffers";
 
-const SearchFlight = () => {
+const handleSearch = (event) => {
+  event.preventDefault();
+  getOffers();
+};
+
+const SearchFlight = ({ searchText, setSearchText, onSearch }) => {
+  const handleInputChange = (event) => setSearchText(event.target.value);
+
   return (
     <div className="search-form-container">
       <div className="search-form">
@@ -9,11 +18,17 @@ const SearchFlight = () => {
           <div className="origin-input-box">
             <label className="form-label" htmlFor="origin-input">
               Origin
-              <input type="text" id="origin-input" name="origin-input" />
+              <input
+                type="text"
+                id="origin-input"
+                name="origin-input"
+                onChange={handleInputChange}
+                value={searchText}
+              />
             </label>
           </div>
 
-          <div className="dep-date-input-box">
+          {/* <div className="dep-date-input-box">
             <label className="form-label" htmlFor="dep-date-input">
               Depart date
               <input type="date" id="dep-date-input" name="dep-date-input" />
@@ -35,9 +50,14 @@ const SearchFlight = () => {
               <option value="3">3</option>
               <option value="4">4</option>
             </select>
-          </label>
+          </label> */}
 
-          <button type="submit">Search flights</button>
+          <button type="button" onClick={onSearch}>
+            Search flights
+          </button>
+          <button type="button" onClick={handleSearch}>
+            Search offers
+          </button>
         </form>
       </div>
     </div>
@@ -45,3 +65,9 @@ const SearchFlight = () => {
 };
 
 export default SearchFlight;
+
+SearchFlight.propTypes = {
+  searchText: PropTypes.string.isRequired,
+  setSearchText: PropTypes.func.isRequired,
+  onSearch: PropTypes.func.isRequired,
+};

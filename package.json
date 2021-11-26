@@ -4,5 +4,8 @@
   },
   "scripts": {
     "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\" "
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2"
   }
 }
