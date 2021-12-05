@@ -1,0 +1,45 @@
+.flight-offers-summary {
+  text-align: center;
+  max-width: 600px;
+  margin: 2rem auto 2rem auto;
+  color: black;
+  border: 2px solid rgb(44, 3, 71);
+  box-shadow: 5px 10px rgb(44, 3, 71);
+  display: block;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+      background-image:linear-gradient(to bottom right, #ece5f8, rgb(123 106 42 / 10%));  
+
+}
+
+.flight-offers-summary__price {
+  margin: 1px 1px 1px 1px;
+  padding: 0.5rem;
+  font-size: 20px;
+}
+
+.flight-offers-summary__button {
+  margin: 1px 1px 1px 1px;
+  padding: 0.5rem;
+  font-size: 20px;
+  border-radius: 5px;
+  color: white;
+  background-color: rgb(44, 3, 71);
+  padding: 12px;
+  border: none;
+  font-weight: bold;
+  margin: 10px 1px 1px 1px;
+}
+
+.flight-offers-summary__destination {
+  margin: 1px 1px 1px 1px;
+  font-weight: bold;
+  padding: 0.5rem;
+  font-size: 20px;
+  align-items: center;
+}
+
+.flight-offers-summary__image img {
+  width: 300px;
+  padding: 0.5rem;
+}

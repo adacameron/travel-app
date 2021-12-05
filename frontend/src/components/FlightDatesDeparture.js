@@ -7,15 +7,13 @@ const FlightDatesDeparture = ({ city }) => {
   return (
     <div
       className="flight-dates-departure"
-      style={{ border: "3px solid green", textAlign: "center" }}
+      style={{ border: "3px solid purple", textAlign: "center" }}
     >
-      <h1>FlightDatesDeparture</h1>
-
-      <div className="flight-dates-departure__origin">{`${city}`} </div>
-
-      <p> \\\\\ Location</p>
-      <p>Passengers \\\\\ Economy</p>
-      <p>Departure Date \\\\\ Return Date</p>
+      <div className="flight-dates-departure__origin">
+        Flying from: [Origin city] {`${city}`}{" "}
+      </div>
+      <p>[Passengers]:</p>
+      <p>From [Departure Date] to [Return Date]</p>
     </div>
   );
 };

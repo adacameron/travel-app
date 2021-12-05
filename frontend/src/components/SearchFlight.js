@@ -1,12 +1,12 @@
 import React from "react";
 import "../styles/SearchFlight.css";
 import PropTypes from "prop-types";
-import getOffers from "../requests/getOffers";
+// import getOffers from "../requests/getOffers";
 
-const handleSearch = (event) => {
-  event.preventDefault();
-  getOffers();
-};
+// const handleSearch = (event) => {
+//   event.preventDefault();
+//   getOffers();
+// };
 
 const SearchFlight = ({
   searchText,
@@ -18,7 +18,17 @@ const SearchFlight = ({
   adults,
   setAdults,
   onSearch,
+  origin,
+  setOrigin,
+  inspOnSearch,
+  maxPrice,
+  setMaxPrice,
+  inspDepartureDate,
+  setInspDepartureDate,
+  days,
+  setDays,
 }) => {
+  // FLIGHT OFFERS //
   const handleInputChange = (event) => setSearchText(event.target.value);
 
   const handleInputChangeLoc = (event) => setLocationCode(event.target.value);
@@ -27,6 +37,16 @@ const SearchFlight = ({
 
   const handleInputChangeAdults = (event) => setAdults(event.target.value);
 
+  // FLIGHT INSPIRATION //
+
+  const handleInputChangeOrigin = (event) => setOrigin(event.target.value);
+
+  const handleInputChangeInspDate = (event) =>
+    setInspDepartureDate(event.target.value);
+
+  const handleInputChangePrice = (event) => setMaxPrice(event.target.value);
+
+  const handleInputChangeDays = (event) => setDays(event.target.value);
   return (
     <div className="search-form-container">
       <div className="search-form">
@@ -83,28 +103,61 @@ const SearchFlight = ({
             </label>
           </div>
 
-          {/* <div className="ret-date-input-box">
-            <label className="form-label" htmlFor="ret-date-input">
-              Return date
-              <input type="date" id="ret-date-input" name="ret-date-input" />
-            </label>
-          </div> */}
-
-          <label className="form-label" htmlFor="passenger-select-input">
-            Passengers
-            <select id="passenger-select-input" name="passenger-select-input">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select>
-          </label>
-
           <button type="button" onClick={onSearch}>
             Search flights
           </button>
-          <button type="button" onClick={handleSearch}>
-            Search offers
+          {/* FLIGHT INSPIRATION API FORM */}
+          <h3>Any destination</h3>
+          <div className="insp-origin-input-box">
+            <label className="form-label" htmlFor="insp-origin-input">
+              Origin
+              <input
+                type="text"
+                id="insp-origin-input"
+                name="insp-origin-input"
+                onChange={handleInputChangeOrigin}
+                value={origin}
+              />
+            </label>
+            <div className="insp-date-input-box">
+              <label className="form-label" htmlFor="insp-date-input">
+                Depart date
+                <input
+                  type="date"
+                  id="insp-date-input"
+                  name="insp-date-input"
+                  onChange={handleInputChangeInspDate}
+                  value={inspDepartureDate}
+                />
+              </label>
+            </div>
+            <div className="days-input-box">
+              <label className="form-label" htmlFor="days-input">
+                Days
+                <input
+                  type="text"
+                  id="days-input"
+                  name="days-input"
+                  onChange={handleInputChangeDays}
+                  value={days}
+                />
+              </label>
+            </div>
+            <div className="budget-input-box">
+              <label className="form-label" htmlFor="budget-input">
+                Budget £
+                <input
+                  type="number"
+                  id="budget-input"
+                  name="budget-input"
+                  onChange={handleInputChangePrice}
+                  value={maxPrice}
+                />
+              </label>
+            </div>
+          </div>
+          <button type="button" onClick={inspOnSearch}>
+            Search all destinations
           </button>
         </form>
       </div>
@@ -124,4 +177,13 @@ SearchFlight.propTypes = {
   setDepartureDate: PropTypes.func.isRequired,
   adults: PropTypes.number.isRequired,
   setAdults: PropTypes.func.isRequired,
+  inspOnSearch: PropTypes.func.isRequired,
+  inspDepartureDate: PropTypes.string.isRequired,
+  setInspDepartureDate: PropTypes.func.isRequired,
+  days: PropTypes.string.isRequired,
+  setDays: PropTypes.func.isRequired,
+  maxPrice: PropTypes.number.isRequired,
+  setMaxPrice: PropTypes.func.isRequired,
+  origin: PropTypes.string.isRequired,
+  setOrigin: PropTypes.func.isRequired,
 };
