@@ -1,6 +1,7 @@
+/* eslint-disable no-console */
 import axios from "axios";
 
-const getOriginSearch = (searchText, locationCode, departureDate, adults) => {
+const getOffersSearch = (searchText, locationCode, departureDate, adults) => {
   let endpoint = "http://localhost:1338/";
 
   if (searchText) {
@@ -16,4 +17,4 @@ const getOriginSearch = (searchText, locationCode, departureDate, adults) => {
     });
 };
 
-export default getOriginSearch;
+export default getOffersSearch;
