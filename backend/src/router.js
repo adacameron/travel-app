@@ -26,22 +26,4 @@ router.get("/:origin/:location/:departure/:adults", (req, res) => {
     });
 });
 
-router.get("/:origin/:departure/:days/:maxPrice", (req, res) => {
-  const { origin, departure, days, maxPrice } = req.params;
-
-  amadeus.shopping.flightDestinations
-    .get({
-      origin: `${origin}`,
-      departureDate: `${departure}`,
-      duration: `${days}`,
-      maxPrice: `${maxPrice}`,
-    })
-    .then(function (response) {
-      res.send(response.data);
-    })
-    .catch(function (responseError) {
-      console.log(responseError.code);
-    });
-});
-
 module.exports = router;

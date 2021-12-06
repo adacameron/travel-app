@@ -10,7 +10,7 @@ const NavBar = () => {
       <img src={logo} className="navbar-logo" alt="Logo" />
       <h1>Travel App</h1>
       <div className="navbar-links">
-        <ul className="navbar-links">
+        <ul className="navbar-links-list">
           <li className="navbar-links-item">
             <NavLink to="/">Flights</NavLink>
           </li>
