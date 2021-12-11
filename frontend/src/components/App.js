@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import "../styles/App.css";
 import SearchFlight from "./SearchFlight";
@@ -31,12 +31,14 @@ const App = ({ data, inspirationFlights }) => {
     inspirationFlights[0].destination
   );
 
+  const navigate = useNavigate();
   const handleOriginSearch = () => {
     getOffersSearch(searchText, locationCode, departureDate, adults);
   };
 
-  const handleInspirationSearch = () => {
-    getInspirationSearch(origin, inspDepartureDate, days, maxPrice);
+  const handleInspirationSearch = async () => {
+    await getInspirationSearch(origin, inspDepartureDate, days, maxPrice);
+    navigate("/flight-inspiration-summaries");
   };
   const selectedInspirationFlight = inspirationFlights.find(
     (inspirationFlight) =>
@@ -48,7 +50,7 @@ const App = ({ data, inspirationFlights }) => {
   };
 
   return (
-    <BrowserRouter>
+    <>
       <NavBar />
 
       <Routes>
@@ -112,7 +114,7 @@ const App = ({ data, inspirationFlights }) => {
           }
         />
       </Routes>
-    </BrowserRouter>
+    </>
   );
 };
 

@@ -3,7 +3,7 @@
 import axios from "axios";
 
 const getInspirationFlights = (origin, departure, days, maxPrice) => {
-  let endpoint = "http://localhost:1338/";
+  let endpoint = "http://localhost:1338/flights/";
   if (origin) {
     endpoint += `${origin}/${departure}/${days}/${maxPrice}`;
   }

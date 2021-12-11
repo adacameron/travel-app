@@ -1,10 +1,13 @@
+/* eslint-disable no-console */
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React, { useState } from "react";
 // import SearchRandom from "./SearchRandom";
 // import Data from "./data.json";
 
 function AutoComplete({ flight }) {
   const [filteredData, setFilteredData] = useState([]);
-  const [evereywhere, setEveryWhere] = useState(false);
+  const [everywhere, setEveryWhere] = useState(false);
 
   const handleFilter = (event) => {
     const searchWord = event.target.value;
