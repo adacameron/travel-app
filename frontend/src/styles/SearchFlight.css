@@ -1,7 +1,8 @@
 .search-form-container {
   margin-top: -2px;
-  margin-left: 98px;
+  margin-left: 93px;
   padding: 20px;
+  padding-right: 1100px;
   background-color: rgb(62, 62, 146);
   width: fit-content;
   border-top-right-radius: 10px;
@@ -23,7 +24,6 @@ input {
 
 .dep-date-input-box {
   display: inline-block;
-  padding-left: 10px;
   padding-right: 10px;
 }
 
@@ -34,4 +34,14 @@ input {
 
 .form-label {
   display: inline-block;
+}
+
+@media (max-width: 600px) {
+  .search-form-container {
+    margin: 0;
+  }
+
+  .search-form {
+    width: 600px;
+  }
 }
