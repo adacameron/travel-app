@@ -31,6 +31,7 @@ const App = ({ data, inspirationFlights }) => {
   const [inspirationDestination, setInspirationDestination] = useState(
     inspirationFlights[0].destination
   );
+  const [inspirationResults, setInspirationResults] = useState([]);
 
   const navigate = useNavigate();
   const handleOriginSearch = async (event) => {
@@ -42,7 +43,9 @@ const App = ({ data, inspirationFlights }) => {
   };
 
   const handleInspirationSearch = async () => {
-    await getInspirationSearch(origin, inspDepartureDate, days, maxPrice);
+    setInspirationResults(
+      await getInspirationSearch(origin, inspDepartureDate, days, maxPrice)
+    );
     navigate("/flight-inspiration-summaries");
   };
   const selectedInspirationFlight = inspirationFlights.find(
@@ -89,7 +92,7 @@ const App = ({ data, inspirationFlights }) => {
           path="/flight-inspiration-summaries"
           element={
             <FlightSummaries
-              inspirationFlights={inspirationFlights}
+              inspirationFlights={inspirationResults}
               onFlightSelect={handleInspirationSelect}
             />
           }

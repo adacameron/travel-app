@@ -5,14 +5,14 @@ import PropTypes from "prop-types";
 import mockimage from "../assets/mockimage.jpg";
 
 const FlightOffersSummary = (props) => {
-  const { arrival, price, onSelect } = props;
+  const { arrival, price, duration, onSelect } = props;
   return (
     <div className="flight-offers-summary">
       <div className="flight-offers-summary__image">
         <img src={mockimage} alt="mock" />
       </div>
       <div className="flight-offers-summary__destination">{arrival}</div>
-
+      <div className="flight-offers-summary__duration">{duration}</div>
       <div className="flight-offers-summary__price">{price}</div>
       <button
         type="button"
@@ -32,6 +32,7 @@ FlightOffersSummary.propTypes = {
   price: PropTypes.shape({
     base: PropTypes.number,
   }).isRequired,
+  duration: PropTypes.string.isRequired,
   onSelect: PropTypes.func.isRequired,
 };
 
