@@ -10,7 +10,7 @@ const getOffersSearch = (searchText, locationCode, departureDate, adults) => {
   return axios
     .get(endpoint)
     .then((res) => {
-      console.log(res);
+      return res.data;
     })
     .catch((err) => {
       console.log(err);
