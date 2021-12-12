@@ -11,11 +11,9 @@ const FlightOffersSummary = (props) => {
       <div className="flight-offers-summary__image">
         <img src={mockimage} alt="mock" />
       </div>
-      <div className="flight-offers-summary__destination">
-        {arrival.iataCode}
-      </div>
+      <div className="flight-offers-summary__destination">{arrival}</div>
 
-      <div className="flight-offers-summary__price">{price.base}</div>
+      <div className="flight-offers-summary__price">{price}</div>
       <button
         type="button"
         onClick={() => onSelect(console.log("tbc - link to external site"))}

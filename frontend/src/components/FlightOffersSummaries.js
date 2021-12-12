@@ -16,7 +16,7 @@ const FlightOffersSummaries = ({ data, onFlightSelect }) => {
           <FlightOffersSummary
             key={flight.price}
             arrival={flight.itineraries[0].segments[0].arrival.iataCode}
-            price={flight.price}
+            price={flight.price.base}
             onSelect={onFlightSelect}
           />
         ))}
