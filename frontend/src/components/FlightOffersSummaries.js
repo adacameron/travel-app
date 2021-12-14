@@ -16,7 +16,8 @@ const FlightOffersSummaries = ({ data, onFlightSelect }) => {
           <FlightOffersSummary
             key={flight.price}
             arrival={flight.itineraries[0].segments[0].arrival.iataCode}
-            price={flight.price}
+            price={flight.price.base}
+            duration={flight.itineraries[0].segments[0].duration}
             onSelect={onFlightSelect}
           />
         ))}
@@ -35,6 +36,7 @@ FlightOffersSummaries.propTypes = {
               arrival: PropTypes.shape({
                 iataCode: PropTypes.string,
               }),
+              duration: PropTypes.string,
             })
           ),
         })

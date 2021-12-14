@@ -21,6 +21,7 @@ const App = ({ data, inspirationFlights }) => {
   const [locationCode, setLocationCode] = useState("");
   const [departureDate, setDepartureDate] = useState("");
   const [adults, setAdults] = useState(0);
+  const [flightResults, setFlightResults] = useState([]);
 
   // FLIGHT INSPIRATION API //
   const [origin, setOrigin] = useState("");
@@ -30,14 +31,21 @@ const App = ({ data, inspirationFlights }) => {
   const [inspirationDestination, setInspirationDestination] = useState(
     inspirationFlights[0].destination
   );
+  const [inspirationResults, setInspirationResults] = useState([]);
 
   const navigate = useNavigate();
-  const handleOriginSearch = () => {
-    getOffersSearch(searchText, locationCode, departureDate, adults);
+  const handleOriginSearch = async (event) => {
+    event.preventDefault();
+    setFlightResults(
+      await getOffersSearch(searchText, locationCode, departureDate, adults)
+    );
+    navigate("/flight-offers-summaries");
   };
 
   const handleInspirationSearch = async () => {
-    await getInspirationSearch(origin, inspDepartureDate, days, maxPrice);
+    setInspirationResults(
+      await getInspirationSearch(origin, inspDepartureDate, days, maxPrice)
+    );
     navigate("/flight-inspiration-summaries");
   };
   const selectedInspirationFlight = inspirationFlights.find(
@@ -52,7 +60,6 @@ const App = ({ data, inspirationFlights }) => {
   return (
     <>
       <NavBar />
-
       <Routes>
         <Route
           path="/"
@@ -85,7 +92,7 @@ const App = ({ data, inspirationFlights }) => {
           path="/flight-inspiration-summaries"
           element={
             <FlightSummaries
-              inspirationFlights={inspirationFlights}
+              inspirationFlights={inspirationResults}
               onFlightSelect={handleInspirationSelect}
             />
           }
@@ -95,7 +102,7 @@ const App = ({ data, inspirationFlights }) => {
           path="/flight-offers-summaries"
           element={
             <FlightOffersSummaries
-              data={data}
+              data={flightResults}
               onFlightSelect={handleInspirationSelect}
             />
           }
