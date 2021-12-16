@@ -1,7 +1,10 @@
 const Amadeus = require("amadeus");
+const PexelsAPI = require('pexels-api-wrapper'); 
 const router = require("express").Router();
 
-const { CLIENT_ID, CLIENT_SECRET } = require("./config");
+const { CLIENT_ID, CLIENT_SECRET, API_KEY } = require("./config");
+
+const pexelsClient = new PexelsAPI(API_KEY);
 
 const amadeus = new Amadeus({
   clientId: CLIENT_ID,
@@ -43,5 +46,18 @@ router.get("/flights/:origin/:departure/:days/:maxPrice", (req, res) => {
       console.log(responseError.code);
     });
 });
+
+router.get("/search?:query", (req, res) => {
+  const { query } = req.query;
+
+  pexelsClient.search({ query, per_page: 1 })
+    .then(function (response) {
+      res.send(response.photos)
+      console.log(photos);
+    }).
+    catch(function (e) {
+      console.err("error", e);
+    });
+})
 
 module.exports = router;

@@ -14,8 +14,11 @@ import getInspirationSearch from "../requests/getInspirationSearch";
 import FlightSummaries from "./FlightSummaries";
 import FlightOffersSummaries from "./FlightOffersSummaries";
 import InspirationFlightDetails from "./InspirationFlightDetails";
+import getImages from "../requests/getImages";
 
 const App = ({ data, inspirationFlights }) => {
+  // IMAGES API //
+  const [query, setQuery] = useState("");
   // FLIGHT OFFERS API //
   const [searchText, setSearchText] = useState("");
   const [locationCode, setLocationCode] = useState("");
@@ -39,13 +42,16 @@ const App = ({ data, inspirationFlights }) => {
     setFlightResults(
       await getOffersSearch(searchText, locationCode, departureDate, adults)
     );
+    setQuery(await getImages(searchText));
     navigate("/flight-offers-summaries");
+    // console.log("***searchText", searchText);
   };
 
   const handleInspirationSearch = async () => {
     setInspirationResults(
       await getInspirationSearch(origin, inspDepartureDate, days, maxPrice)
     );
+    setQuery(await getImages(searchText));
     navigate("/flight-inspiration-summaries");
   };
   const selectedInspirationFlight = inspirationFlights.find(
@@ -56,6 +62,10 @@ const App = ({ data, inspirationFlights }) => {
   const handleInspirationSelect = (destination) => {
     setInspirationDestination(destination);
   };
+
+  // const handleImageSearch = async () => {
+  //   setImages(await getImages(searchText));
+  // };
 
   return (
     <>
@@ -104,6 +114,7 @@ const App = ({ data, inspirationFlights }) => {
             <FlightOffersSummaries
               data={flightResults}
               onFlightSelect={handleInspirationSelect}
+              photos={query}
             />
           }
         />
