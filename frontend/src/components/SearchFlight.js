@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from "react";
 import "../styles/SearchFlight.css";
 import PropTypes from "prop-types";
@@ -28,6 +29,7 @@ const SearchFlight = ({
   days,
   setDays,
 }) => {
+  // console.log(searchText);
   // FLIGHT OFFERS //
   const handleInputChange = (event) => setSearchText(event.target.value);
 

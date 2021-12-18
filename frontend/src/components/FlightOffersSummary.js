@@ -1,19 +1,19 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
-/* eslint-disable react/no-unused-prop-types */
 import React from "react";
 import PropTypes from "prop-types";
-import mockimage from "../assets/mockimage.jpg";
 
 const FlightOffersSummary = (props) => {
-  const { arrival, price, duration, onSelect } = props;
+  const { arrival, price, duration, onSelect, photo } = props;
+  console.log(photo, "photo");
   return (
     <div className="flight-offers-summary">
       <div className="flight-offers-summary__image">
-        <img src={mockimage} alt="mock" />
+        <img src={photo} alt="travel" />
       </div>
       <div className="flight-offers-summary__destination">{arrival}</div>
       <div className="flight-offers-summary__duration">{duration}</div>
-      <div className="flight-offers-summary__price">{price}</div>
+      <div className="flight-offers-summary__price">£{price}</div>
       <button
         type="button"
         onClick={() => onSelect(console.log("tbc - link to external site"))}
@@ -34,6 +34,7 @@ FlightOffersSummary.propTypes = {
   }).isRequired,
   duration: PropTypes.string.isRequired,
   onSelect: PropTypes.func.isRequired,
+  photo: PropTypes.string.isRequired,
 };
 
 export default FlightOffersSummary;
