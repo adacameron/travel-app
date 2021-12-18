@@ -11,7 +11,7 @@ const amadeus = new Amadeus({
   clientSecret: CLIENT_SECRET,
 });
 
-router.get("/:origin/:location/:departure/:adults", (req, res) => {
+router.get("/nonstop=true/:origin/:location/:departure/:adults/", (req, res) => {
   const { origin, location, departure, adults } = req.params;
 
   amadeus.shopping.flightOffersSearch
@@ -20,6 +20,7 @@ router.get("/:origin/:location/:departure/:adults", (req, res) => {
       destinationLocationCode: `${location}`,
       departureDate: `${departure}`,
       adults: `${adults}`,
+      nonStop: true,
     })
     .then(function (response) {
       res.send(response.data);
@@ -29,7 +30,7 @@ router.get("/:origin/:location/:departure/:adults", (req, res) => {
     });
 });
 
-router.get("/flights/:origin/:departure/:days/:maxPrice", (req, res) => {
+router.get("/flights/nonstop=true/:origin/:departure/:days/:maxPrice", (req, res) => {
   const { origin, departure, days, maxPrice } = req.params;
 
   amadeus.shopping.flightDestinations
@@ -38,6 +39,7 @@ router.get("/flights/:origin/:departure/:days/:maxPrice", (req, res) => {
       departureDate: `${departure}`,
       duration: `${days}`,
       maxPrice: `${maxPrice}`,
+      nonStop: true,
     })
     .then(function (response) {
       res.send(response.data);
@@ -47,16 +49,31 @@ router.get("/flights/:origin/:departure/:days/:maxPrice", (req, res) => {
     });
 });
 
+router.get("/location/:keyword", (req, res) => {
+  amadeus.referenceData.locations.get({
+    keyword: 'LON',
+    subType: 'CITY'
+  }).then(function (response) {
+    res.send(response.data);
+  })
+  .catch(function (responseError) {
+    console.log(responseError.code);
+  });
+});
+
+
+
 router.get("/search?:query", (req, res) => {
   const { query } = req.query;
 
-  pexelsClient.search({ query, per_page: 1 })
+  pexelsClient.search( query )
     .then(function (response) {
+      console.log(query, "query");
       res.send(response.photos)
-      console.log(photos);
+      console.log(response.photos);
     }).
     catch(function (e) {
-      console.err("error", e);
+      console.log("error", e);
     });
 })
 

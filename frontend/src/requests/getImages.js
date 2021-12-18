@@ -1,10 +1,12 @@
 /* eslint-disable no-console */
 import axios from "axios";
 
-const getImages = (searchText) => {
+const getImages = (locationCode) => {
   let endpoint = "http://localhost:1338/search?";
-  if (searchText) {
-    endpoint += `query=${searchText}`;
+  if (locationCode) {
+    endpoint += `query=${locationCode}`;
+  } else {
+    endpoint += `query=travel`;
   }
   return axios
     .get(endpoint)

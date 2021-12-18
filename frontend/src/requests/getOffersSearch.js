@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const getOffersSearch = (searchText, locationCode, departureDate, adults) => {
-  let endpoint = "http://localhost:1338/";
+  let endpoint = "http://localhost:1338/nonstop=true/";
 
   if (searchText) {
     endpoint += `${searchText}/${locationCode}/${departureDate}/${adults}`;

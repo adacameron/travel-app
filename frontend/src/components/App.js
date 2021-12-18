@@ -15,10 +15,11 @@ import FlightSummaries from "./FlightSummaries";
 import FlightOffersSummaries from "./FlightOffersSummaries";
 import InspirationFlightDetails from "./InspirationFlightDetails";
 import getImages from "../requests/getImages";
+import getLocation from "../requests/getLocation";
 
 const App = ({ data, inspirationFlights }) => {
   // IMAGES API //
-  const [query, setQuery] = useState("");
+  const [images, setImages] = useState("");
   // FLIGHT OFFERS API //
   const [searchText, setSearchText] = useState("");
   const [locationCode, setLocationCode] = useState("");
@@ -39,19 +40,25 @@ const App = ({ data, inspirationFlights }) => {
   const navigate = useNavigate();
   const handleOriginSearch = async (event) => {
     event.preventDefault();
-    setFlightResults(
-      await getOffersSearch(searchText, locationCode, departureDate, adults)
+    const results = await getOffersSearch(
+      searchText,
+      locationCode,
+      departureDate,
+      adults
     );
-    setQuery(await getImages(searchText));
+    setFlightResults(results);
+    const location = await getLocation(locationCode);
+    console.log(location, "location");
+    const imageResults = await getImages(location);
+    setImages(imageResults);
     navigate("/flight-offers-summaries");
-    // console.log("***searchText", searchText);
   };
 
   const handleInspirationSearch = async () => {
     setInspirationResults(
       await getInspirationSearch(origin, inspDepartureDate, days, maxPrice)
     );
-    setQuery(await getImages(searchText));
+    setImages(await getImages());
     navigate("/flight-inspiration-summaries");
   };
   const selectedInspirationFlight = inspirationFlights.find(
@@ -62,10 +69,6 @@ const App = ({ data, inspirationFlights }) => {
   const handleInspirationSelect = (destination) => {
     setInspirationDestination(destination);
   };
-
-  // const handleImageSearch = async () => {
-  //   setImages(await getImages(searchText));
-  // };
 
   return (
     <>
@@ -112,9 +115,10 @@ const App = ({ data, inspirationFlights }) => {
           path="/flight-offers-summaries"
           element={
             <FlightOffersSummaries
+              departureDate={departureDate}
               data={flightResults}
               onFlightSelect={handleInspirationSelect}
-              photos={query}
+              photos={images}
             />
           }
         />
