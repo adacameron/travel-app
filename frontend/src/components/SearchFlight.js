@@ -29,7 +29,6 @@ const SearchFlight = ({
   days,
   setDays,
 }) => {
-  // console.log(searchText);
   // FLIGHT OFFERS //
   const handleInputChange = (event) => setSearchText(event.target.value);
 
@@ -40,7 +39,6 @@ const SearchFlight = ({
   const handleInputChangeAdults = (event) => setAdults(event.target.value);
 
   // FLIGHT INSPIRATION //
-
   const handleInputChangeOrigin = (event) => setOrigin(event.target.value);
 
   const handleInputChangeInspDate = (event) =>
@@ -50,120 +48,143 @@ const SearchFlight = ({
 
   const handleInputChangeDays = (event) => setDays(event.target.value);
   return (
-    <div className="search-form-container">
-      <div className="search-form">
-        <form>
-          <div className="origin-input-box">
-            <label className="form-label" htmlFor="origin-input">
-              Origin
-              <input
-                type="text"
-                id="origin-input"
-                name="origin-input"
-                onChange={handleInputChange}
-                value={searchText}
-              />
-            </label>
+    <form className="search-form">
+      <ul className="search-form-container">
+        <li className="form-row">
+          <label className="form-label" htmlFor="origin-input">
+            Origin{" "}
+          </label>
+          <div className="input-box">
+            <input
+              type="text"
+              id="origin-input"
+              name="origin-input"
+              onChange={handleInputChange}
+              value={searchText}
+            />
           </div>
+        </li>
 
-          <div className="dest-input-box">
-            <label className="form-label" htmlFor="dest-input">
-              Destination
-              <input
-                type="text"
-                id="dest-input"
-                name="dest-input"
-                onChange={handleInputChangeLoc}
-                value={locationCode}
-              />
-            </label>
+        <li className="form-row">
+          <label className="form-label" htmlFor="dest-input">
+            Destination{" "}
+          </label>
+          <div className="input-box">
+            <input
+              type="text"
+              id="dest-input"
+              name="dest-input"
+              onChange={handleInputChangeLoc}
+              value={locationCode}
+            />
           </div>
+        </li>
 
-          <div className="dep-date-input-box">
-            <label className="form-label" htmlFor="dep-date-input">
-              Depart date
-              <input
-                type="date"
-                id="dep-date-input"
-                name="dep-date-input"
-                onChange={handleInputChangeDept}
-                value={departureDate}
-              />
-            </label>
+        <li className="form-row">
+          {" "}
+          <label className="form-label" htmlFor="dep-date-input">
+            Depart date{" "}
+          </label>
+          <div className="input-box">
+            <input
+              type="date"
+              id="dep-date-input"
+              name="dep-date-input"
+              onChange={handleInputChangeDept}
+              value={departureDate}
+            />
           </div>
+        </li>
 
-          <div className="adults-input-box">
-            <label className="form-label" htmlFor="adult-input">
-              Adults
-              <input
-                type="number"
-                id="adult-input"
-                name="adult-input"
-                onChange={handleInputChangeAdults}
-                value={adults}
-              />
-            </label>
+        <li className="form-row">
+          <label className="form-label" htmlFor="adult-input">
+            Adults{" "}
+          </label>
+          <div className="input-box">
+            <input
+              type="number"
+              id="adult-input"
+              name="adult-input"
+              onChange={handleInputChangeAdults}
+              value={adults}
+            />
           </div>
-
+        </li>
+        <li className="form-row">
           <button type="button" onClick={onSearch}>
             Search flights
           </button>
-          {/* FLIGHT INSPIRATION API FORM */}
-          <h3>Any destination</h3>
-          <div className="insp-origin-input-box">
-            <label className="form-label" htmlFor="insp-origin-input">
-              Origin
-              <input
-                type="text"
-                id="insp-origin-input"
-                name="insp-origin-input"
-                onChange={handleInputChangeOrigin}
-                value={origin}
-              />
-            </label>
-            <div className="insp-date-input-box">
-              <label className="form-label" htmlFor="insp-date-input">
-                Depart date
-                <input
-                  type="date"
-                  id="insp-date-input"
-                  name="insp-date-input"
-                  onChange={handleInputChangeInspDate}
-                  value={inspDepartureDate}
-                />
-              </label>
-            </div>
-            <div className="days-input-box">
-              <label className="form-label" htmlFor="days-input">
-                Days
-                <input
-                  type="text"
-                  id="days-input"
-                  name="days-input"
-                  onChange={handleInputChangeDays}
-                  value={days}
-                />
-              </label>
-            </div>
-            <div className="budget-input-box">
-              <label className="form-label" htmlFor="budget-input">
-                Budget £
-                <input
-                  type="number"
-                  id="budget-input"
-                  name="budget-input"
-                  onChange={handleInputChangePrice}
-                  value={maxPrice}
-                />
-              </label>
-            </div>
+        </li>
+        {/* FLIGHT INSPIRATION API FORM */}
+        <h4 className="form-row">Any destination</h4>
+        <li className="form-row">
+          <label className="form-label" htmlFor="insp-origin-input">
+            Origin{" "}
+          </label>
+          <div className="input-box">
+            <input
+              type="text"
+              id="insp-origin-input"
+              name="insp-origin-input"
+              onChange={handleInputChangeOrigin}
+              value={origin}
+            />
           </div>
+        </li>
+        <li className="form-row">
+          {" "}
+          <label className="form-label" htmlFor="insp-date-input">
+            Depart date{" "}
+          </label>
+          <div className="input-box">
+            <input
+              type="date"
+              id="insp-date-input"
+              name="insp-date-input"
+              onChange={handleInputChangeInspDate}
+              value={inspDepartureDate}
+            />
+          </div>
+        </li>
+        <li className="form-row">
+          {" "}
+          <label className="form-label" htmlFor="days-input">
+            Days{" "}
+          </label>
+          <div className="input-box">
+            <input
+              type="text"
+              id="days-input"
+              name="days-input"
+              onChange={handleInputChangeDays}
+              value={days}
+            />
+          </div>
+        </li>
+        <li className="form-row">
+          {" "}
+          <label className="form-label" htmlFor="budget-input">
+            Budget £{" "}
+          </label>
+          <div className="input-box">
+            <input
+              type="number"
+              id="budget-input"
+              name="budget-input"
+              onChange={handleInputChangePrice}
+              value={maxPrice}
+              placeholder="£"
+            />
+          </div>
+        </li>
+
+        <li className="form-row">
           <button type="button" onClick={inspOnSearch}>
             Search all destinations
           </button>
-        </form>
-      </div>
-    </div>
+        </li>
+      </ul>
+    </form>
   );
 };
 
