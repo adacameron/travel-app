@@ -1,14 +1,13 @@
+/* eslint-disable react/no-unused-prop-types */
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
-import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import "../styles/App.css";
 import SearchFlight from "./SearchFlight";
 import NavBar from "./NavBar";
-import SearchHotel from "./SearchHotel";
-// import getOffers from "../requests/getOffers";
 import getOffersSearch from "../requests/getOffersSearch";
 import getInspirationSearch from "../requests/getInspirationSearch";
 import FlightSummaries from "./FlightSummaries";
@@ -16,8 +15,9 @@ import FlightOffersSummaries from "./FlightOffersSummaries";
 import InspirationFlightDetails from "./InspirationFlightDetails";
 import getImages from "../requests/getImages";
 import getLocation from "../requests/getLocation";
+import getOriginLocation from "../requests/getOriginLocation";
 
-const App = ({ data, inspirationFlights }) => {
+const App = ({ inspirationFlights }) => {
   // IMAGES API //
   const [images, setImages] = useState("");
   // FLIGHT OFFERS API //
@@ -36,7 +36,8 @@ const App = ({ data, inspirationFlights }) => {
     inspirationFlights[0].destination
   );
   const [inspirationResults, setInspirationResults] = useState([]);
-
+  const [destinationData, setDestinationData] = useState([]);
+  const [originData, setOriginData] = useState([]);
   const navigate = useNavigate();
   const handleOriginSearch = async (event) => {
     event.preventDefault();
@@ -48,9 +49,12 @@ const App = ({ data, inspirationFlights }) => {
     );
     setFlightResults(results);
     const location = await getLocation(locationCode);
-    console.log(location, "location");
     const imageResults = await getImages(location);
+    const destinationResults = await getLocation(locationCode);
+    const originResults = await getOriginLocation(searchText);
     setImages(imageResults);
+    setDestinationData(destinationResults);
+    setOriginData(originResults);
     navigate("/flight-offers-summaries");
   };
 
@@ -99,7 +103,6 @@ const App = ({ data, inspirationFlights }) => {
             />
           }
         />
-        <Route path="/hotels" element={<SearchHotel />} />
 
         <Route
           path="/flight-inspiration-summaries"
@@ -119,6 +122,8 @@ const App = ({ data, inspirationFlights }) => {
               data={flightResults}
               onFlightSelect={handleInspirationSelect}
               photos={images}
+              destinationData={destinationData}
+              originData={originData}
             />
           }
         />

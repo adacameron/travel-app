@@ -2,11 +2,11 @@
 /* eslint-disable no-console */
 import axios from "axios";
 
-const getLocation = (locationCode) => {
+const getOriginLocation = (searchText) => {
   let endpoint = "http://localhost:1338/location/";
 
-  if (locationCode) {
-    endpoint += `${locationCode}`;
+  if (searchText) {
+    endpoint += `${searchText}`;
   }
   return axios
 
@@ -19,4 +19,4 @@ const getLocation = (locationCode) => {
     });
 };
 
-export default getLocation;
+export default getOriginLocation;

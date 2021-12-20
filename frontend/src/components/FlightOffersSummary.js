@@ -4,14 +4,13 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const FlightOffersSummary = (props) => {
-  const { arrival, price, duration, onSelect, photo } = props;
-  console.log(photo, "photo");
+  const { destination, price, duration, onSelect, photo } = props;
   return (
     <div className="flight-offers-summary">
       <div className="flight-offers-summary__image">
         <img src={photo} alt="travel" />
       </div>
-      <div className="flight-offers-summary__destination">{arrival}</div>
+      <div className="flight-offers-summary__destination">{destination}</div>
       <div className="flight-offers-summary__duration">{duration}</div>
       <div className="flight-offers-summary__price">£{price}</div>
       <button
@@ -26,9 +25,7 @@ const FlightOffersSummary = (props) => {
 };
 
 FlightOffersSummary.propTypes = {
-  arrival: PropTypes.shape({
-    iataCode: PropTypes.string,
-  }).isRequired,
+  destination: PropTypes.string.isRequired,
   price: PropTypes.shape({
     base: PropTypes.number,
   }).isRequired,
