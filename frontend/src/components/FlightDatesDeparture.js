@@ -1,9 +1,11 @@
+/* eslint-disable no-console */
 import React from "react";
 import PropTypes from "prop-types";
+import moment from "moment";
 
 const FlightDatesDeparture = (props) => {
-  const { destination, origin, passengers, departureDate, returnDate } = props;
-
+  const { originData, passengers, departureDate, destinationData } = props;
+  console.log(destinationData, "destinationData");
   return (
     <div
       className="flight-dates-departure"
@@ -13,21 +15,19 @@ const FlightDatesDeparture = (props) => {
         {`${passengers}`} Adults{" "}
       </div>
       <div className="flight-dates-departure__origin-destination">
-        {`${origin} - ${destination}`}{" "}
+        {`${originData} - ${destinationData}`}{" "}
       </div>
       <div className="flight-dates-departure__dates">
-        <p>Departure date - return date:</p>
-        {`${departureDate} - ${returnDate}`}{" "}
+        Departing on {moment(departureDate).format("ddd Do MMM")}{" "}
       </div>
     </div>
   );
 };
 
 FlightDatesDeparture.propTypes = {
-  origin: PropTypes.string.isRequired,
-  destination: PropTypes.string.isRequired,
+  originData: PropTypes.string.isRequired,
+  destinationData: PropTypes.string.isRequired,
   departureDate: PropTypes.number.isRequired,
-  returnDate: PropTypes.number.isRequired,
   passengers: PropTypes.number.isRequired,
 };
 

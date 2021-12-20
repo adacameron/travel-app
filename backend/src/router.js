@@ -50,8 +50,9 @@ router.get("/flights/nonstop=true/:origin/:departure/:days/:maxPrice", (req, res
 });
 
 router.get("/location/:keyword", (req, res) => {
+  const { keyword } = req.params;
   amadeus.referenceData.locations.get({
-    keyword: 'LON',
+    keyword: `${keyword}`,
     subType: 'CITY'
   }).then(function (response) {
     res.send(response.data);

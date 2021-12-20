@@ -15,7 +15,11 @@ const FlightOffersSummaries = ({
   onFlightSelect,
   photos,
   departureDate,
+  destinationData,
+  originData,
 }) => {
+  console.log(photos, "photos");
+  console.log(destinationData, "destinationData");
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
@@ -23,17 +27,19 @@ const FlightOffersSummaries = ({
     const randomPhotoIndex = getRandomInt(photos.length);
     return {
       ...flight,
-      photo: photos[randomPhotoIndex].src.original,
+      photo: photos[randomPhotoIndex].src.medium,
+      destination: destinationData,
     };
   });
+  console.log(dataAndPhotos, "dataAndPhotos");
 
   return (
     <>
       <div className="flight-details-card">
         <FlightDatesDeparture
-          origin={data[0].itineraries[0].segments[0].departure.iataCode}
+          originData={originData}
           passengers={Object.keys(data[0].travelerPricings).length}
-          destination={data[0].itineraries[0].segments[0].arrival.iataCode}
+          destinationData={destinationData}
           departureDate={departureDate}
         />
       </div>
@@ -41,7 +47,7 @@ const FlightOffersSummaries = ({
         {dataAndPhotos.map((flight) => (
           <FlightOffersSummary
             key={flight.id}
-            arrival={flight.itineraries[0].segments[0].arrival.iataCode}
+            destination={flight.destination}
             price={flight.price.base}
             duration={flight.itineraries[0].segments[0].duration}
             onSelect={onFlightSelect}
