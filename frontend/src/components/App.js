@@ -16,8 +16,12 @@ import InspirationFlightDetails from "./InspirationFlightDetails";
 import getImages from "../requests/getImages";
 import getLocation from "../requests/getLocation";
 import getOriginLocation from "../requests/getOriginLocation";
+import getInspOrigin from "../requests/getInspOrigin";
+import getInspLocation from "../requests/getInspLocation";
 
-const App = ({ inspirationFlights }) => {
+const App = () => {
+  const navigate = useNavigate();
+
   // IMAGES API //
   const [images, setImages] = useState("");
   // FLIGHT OFFERS API //
@@ -26,19 +30,20 @@ const App = ({ inspirationFlights }) => {
   const [departureDate, setDepartureDate] = useState("");
   const [adults, setAdults] = useState(0);
   const [flightResults, setFlightResults] = useState([]);
-
+  const [destinationData, setDestinationData] = useState([]);
+  const [originData, setOriginData] = useState([]);
   // FLIGHT INSPIRATION API //
   const [origin, setOrigin] = useState("");
   const [inspDepartureDate, setInspDepartureDate] = useState("");
   const [days, setDays] = useState(0);
   const [maxPrice, setMaxPrice] = useState(0);
-  const [inspirationDestination, setInspirationDestination] = useState(
-    inspirationFlights[0].destination
-  );
+  const [inspDestinationData, setInspDestinationData] = useState([]);
+  // const [inspirationDestination, setInspirationDestination] = useState(
+  //   inspirationFlights[0].destination
+  // );
   const [inspirationResults, setInspirationResults] = useState([]);
-  const [destinationData, setDestinationData] = useState([]);
-  const [originData, setOriginData] = useState([]);
-  const navigate = useNavigate();
+  const [inspOriginData, setInspOriginData] = useState([]);
+
   const handleOriginSearch = async (event) => {
     event.preventDefault();
     const results = await getOffersSearch(
@@ -50,25 +55,39 @@ const App = ({ inspirationFlights }) => {
     setFlightResults(results);
     const location = await getLocation(locationCode);
     const imageResults = await getImages(location);
-    const destinationResults = await getLocation(locationCode);
-    const originResults = await getOriginLocation(searchText);
     setImages(imageResults);
+    const destinationResults = await getLocation(locationCode);
     setDestinationData(destinationResults);
+    // console.log(destinationResults, "destination results");
+    const originResults = await getOriginLocation(searchText);
     setOriginData(originResults);
     navigate("/flight-offers-summaries");
   };
 
-  const handleInspirationSearch = async () => {
-    setInspirationResults(
-      await getInspirationSearch(origin, inspDepartureDate, days, maxPrice)
+  const handleInspirationSearch = async (event) => {
+    event.preventDefault();
+    const inspResults = await getInspirationSearch(
+      origin,
+      inspDepartureDate,
+      days,
+      maxPrice
     );
-    setImages(await getImages());
+    setInspirationResults(inspResults);
+    const inspOriginResults = await getInspOrigin(origin);
+    console.log(inspOriginResults, "inspOriginResults");
+    setInspOriginData(inspOriginResults);
+    console.log(inspOriginData, "inspOriginData");
+    const imageResults = await getImages();
+    setImages(imageResults);
+    const inspDestinationResults = await getLocation(locationCode);
+    setInspDestinationData(inspDestinationResults);
+    console.log(inspDestinationData, "inspDestinationData");
     navigate("/flight-inspiration-summaries");
   };
-  const selectedInspirationFlight = inspirationFlights.find(
-    (inspirationFlight) =>
-      inspirationFlight.destination === inspirationDestination
-  );
+  // const selectedInspirationFlight = inspirationFlights.find(
+  //   (inspirationFlight) =>
+  //     inspirationFlight.destination === inspirationDestination
+  // );
 
   const handleInspirationSelect = (destination) => {
     setInspirationDestination(destination);
@@ -108,8 +127,11 @@ const App = ({ inspirationFlights }) => {
           path="/flight-inspiration-summaries"
           element={
             <FlightSummaries
-              inspirationFlights={inspirationResults}
+              data={inspirationResults}
               onFlightSelect={handleInspirationSelect}
+              photos={images}
+              inspDestinationData={inspDestinationData}
+              inspOriginData={inspOriginData}
             />
           }
         />
@@ -130,15 +152,7 @@ const App = ({ inspirationFlights }) => {
 
         <Route
           path="/inspiration-flight-details"
-          element={
-            <>
-              {selectedInspirationFlight && (
-                <InspirationFlightDetails
-                  inspirationFlight={inspirationFlights[0]}
-                />
-              )}
-            </>
-          }
+          element={<InspirationFlightDetails data={inspirationResults} />}
         />
       </Routes>
     </>

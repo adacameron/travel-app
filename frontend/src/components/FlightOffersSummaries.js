@@ -85,7 +85,7 @@ FlightOffersSummaries.propTypes = {
   photos: PropTypes.arrayOf(
     PropTypes.shape({
       src: PropTypes.shape({
-        original: PropTypes.string,
+        medium: PropTypes.string,
       }),
     })
   ).isRequired,

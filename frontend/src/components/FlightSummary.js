@@ -2,14 +2,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "../styles/flightsummary.css";
-import mockimage from "../assets/mockimage.jpg";
 
 const FlightSummary = (props) => {
-  const { destination, price, onSelect } = props;
+  const { destination, price, onSelect, photo } = props;
   return (
     <div className="flight-summary">
       <div className="flight-summary__image">
-        <img src={mockimage} alt="mock" />
+        <img src={photo} alt="travel" />
       </div>
       <div className="flight-summary__destination">{destination}</div>
 
@@ -19,7 +18,7 @@ const FlightSummary = (props) => {
         onClick={() => onSelect(console.log("tbc - link to external site"))}
         className="flight-summary__button"
       >
-        Book Flight
+        Select Flight
       </button>
     </div>
   );
@@ -31,6 +30,7 @@ FlightSummary.propTypes = {
   price: PropTypes.shape({
     total: PropTypes.number,
   }).isRequired,
+  photo: PropTypes.string.isRequired,
 };
 
 export default FlightSummary;

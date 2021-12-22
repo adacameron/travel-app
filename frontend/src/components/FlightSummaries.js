@@ -1,22 +1,45 @@
+/* eslint-disable react/prop-types */
+
 import React from "react";
 import PropTypes from "prop-types";
 import FlightSummary from "./FlightSummary";
 import "../styles/flightsummaries.css";
-import FlightDatesDeparture from "./FlightDatesDeparture";
+import FlightInspDatesDep from "./FlightInspDatesDep";
 
-const FlightSummaries = ({ inspirationFlights, onFlightSelect }) => {
+const FlightSummaries = ({
+  data,
+  onFlightSelect,
+  photos,
+  inspDestinationData,
+  inspOriginData,
+}) => {
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+  const dataAndPhotos = data.map((flight) => {
+    const randomPhotoIndex = getRandomInt(photos.length);
+    return {
+      ...flight,
+      photo: photos[randomPhotoIndex].src.medium,
+    };
+  });
+
   return (
     <>
       <div className="flight-details-card">
-        <FlightDatesDeparture />
+        <FlightInspDatesDep
+          inspOriginData={inspOriginData}
+          inspDestinationData={inspDestinationData}
+        />
       </div>
       <div className="flight-summaries">
-        {inspirationFlights.map((inspirationFlight) => (
+        {dataAndPhotos.map((flight) => (
           <FlightSummary
-            key={inspirationFlight.price}
-            destination={inspirationFlight.destination}
-            price={inspirationFlight.price}
+            key={flight.id}
+            destination={flight.destination}
+            price={flight.price}
             onSelect={onFlightSelect}
+            photo={flight.photo}
           />
         ))}
       </div>
@@ -25,7 +48,7 @@ const FlightSummaries = ({ inspirationFlights, onFlightSelect }) => {
 };
 
 FlightSummaries.propTypes = {
-  inspirationFlights: PropTypes.arrayOf(
+  data: PropTypes.arrayOf(
     PropTypes.shape({
       destination: PropTypes.string,
       price: PropTypes.shape({
@@ -34,6 +57,13 @@ FlightSummaries.propTypes = {
     })
   ).isRequired,
   onFlightSelect: PropTypes.func.isRequired,
+  photos: PropTypes.arrayOf(
+    PropTypes.shape({
+      src: PropTypes.shape({
+        medium: PropTypes.string,
+      }),
+    })
+  ).isRequired,
 };
 
 export default FlightSummaries;
