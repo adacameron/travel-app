@@ -1,5 +1,5 @@
 {
-    "inspirationFlights": [
+    "data": [
         {
             "type": "flight-destination",
             "origin": "ORY",
