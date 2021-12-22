@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 import axios from "axios";
 
@@ -12,7 +11,6 @@ const getLocation = (locationCode) => {
 
     .get(endpoint)
     .then((res) => {
-      console.log("res.data[0].name", res.data[0].name);
       return res.data[0].name;
     })
     .catch((err) => {

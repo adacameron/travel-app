@@ -1,6 +1,3 @@
-/* eslint-disable react/no-unused-prop-types */
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 import React, { useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
@@ -17,9 +14,9 @@ import getImages from "../requests/getImages";
 import getLocation from "../requests/getLocation";
 import getOriginLocation from "../requests/getOriginLocation";
 import getInspOrigin from "../requests/getInspOrigin";
-import getInspLocation from "../requests/getInspLocation";
+// import getInspLocation from "../requests/getInspLocation";
 
-const App = () => {
+const App = ({ airports }) => {
   const navigate = useNavigate();
 
   // IMAGES API //
@@ -37,10 +34,8 @@ const App = () => {
   const [inspDepartureDate, setInspDepartureDate] = useState("");
   const [days, setDays] = useState(0);
   const [maxPrice, setMaxPrice] = useState(0);
-  const [inspDestinationData, setInspDestinationData] = useState([]);
-  // const [inspirationDestination, setInspirationDestination] = useState(
-  //   inspirationFlights[0].destination
-  // );
+  // const [inspDestinationData, setInspDestinationData] = useState([]);
+
   const [inspirationResults, setInspirationResults] = useState([]);
   const [inspOriginData, setInspOriginData] = useState([]);
 
@@ -53,12 +48,15 @@ const App = () => {
       adults
     );
     setFlightResults(results);
+    // API call to change airport code to city name
     const location = await getLocation(locationCode);
+    // passing city name to Pexels API to search images
     const imageResults = await getImages(location);
     setImages(imageResults);
+    // API call to change airport code to city name
     const destinationResults = await getLocation(locationCode);
+    // passing city name to FlightOffersSummaries & FlightDatesDeparture
     setDestinationData(destinationResults);
-    // console.log(destinationResults, "destination results");
     const originResults = await getOriginLocation(searchText);
     setOriginData(originResults);
     navigate("/flight-offers-summaries");
@@ -73,24 +71,24 @@ const App = () => {
       maxPrice
     );
     setInspirationResults(inspResults);
+    console.log("inspResults", inspResults);
+    // const destinations = inspResults.map((flight) => {
+    //   return flight.destination;
+    // });
+    // console.log("destinations", destinations);
+    // const inspDestinationResults = await getInspLocation(destinations);
+    // console.log(inspDestinationResults, "inspDestinationResults1");
+    // setInspDestinationData(inspDestinationResults);
+    // console.log(inspDestinationResults, "inspDestinationResults2");
     const inspOriginResults = await getInspOrigin(origin);
     console.log(inspOriginResults, "inspOriginResults");
     setInspOriginData(inspOriginResults);
     console.log(inspOriginData, "inspOriginData");
     const imageResults = await getImages();
     setImages(imageResults);
-    const inspDestinationResults = await getLocation(locationCode);
-    setInspDestinationData(inspDestinationResults);
-    console.log(inspDestinationData, "inspDestinationData");
+    // setInspDestinationData(inspDestinationResults);
+    // console.log(inspDestinationData, "inspDestinationData");
     navigate("/flight-inspiration-summaries");
-  };
-  // const selectedInspirationFlight = inspirationFlights.find(
-  //   (inspirationFlight) =>
-  //     inspirationFlight.destination === inspirationDestination
-  // );
-
-  const handleInspirationSelect = (destination) => {
-    setInspirationDestination(destination);
   };
 
   return (
@@ -128,10 +126,10 @@ const App = () => {
           element={
             <FlightSummaries
               data={inspirationResults}
-              onFlightSelect={handleInspirationSelect}
               photos={images}
-              inspDestinationData={inspDestinationData}
+              // inspDestinationData={inspDestinationData}
               inspOriginData={inspOriginData}
+              airports={airports}
             />
           }
         />
@@ -142,7 +140,7 @@ const App = () => {
             <FlightOffersSummaries
               departureDate={departureDate}
               data={flightResults}
-              onFlightSelect={handleInspirationSelect}
+              // onFlightSelect={handleInspirationSelect}
               photos={images}
               destinationData={destinationData}
               originData={originData}
@@ -160,32 +158,10 @@ const App = () => {
 };
 
 App.propTypes = {
-  data: PropTypes.arrayOf(
+  airports: PropTypes.arrayOf(
     PropTypes.shape({
-      itineraries: PropTypes.arrayOf(
-        PropTypes.shape({
-          segments: PropTypes.arrayOf(
-            PropTypes.shape({
-              arrival: PropTypes.shape({
-                iataCode: PropTypes.string,
-              }),
-            })
-          ),
-        })
-      ),
-    }),
-    PropTypes.shape({
-      price: PropTypes.shape({
-        base: PropTypes.number,
-      }).isRequired,
-    })
-  ).isRequired,
-  inspirationFlights: PropTypes.arrayOf(
-    PropTypes.shape({
-      destination: PropTypes.string,
-      price: PropTypes.shape({
-        total: PropTypes.string,
-      }),
+      itineraries: PropTypes.string,
+      iataCode: PropTypes.string,
     })
   ).isRequired,
 };

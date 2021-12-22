@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-
 import React from "react";
 import PropTypes from "prop-types";
 import FlightSummary from "./FlightSummary";
@@ -10,12 +8,14 @@ const FlightSummaries = ({
   data,
   onFlightSelect,
   photos,
-  inspDestinationData,
+  // inspDestinationData,
   inspOriginData,
+  airports,
 }) => {
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
+
   const dataAndPhotos = data.map((flight) => {
     const randomPhotoIndex = getRandomInt(photos.length);
     return {
@@ -29,13 +29,14 @@ const FlightSummaries = ({
       <div className="flight-details-card">
         <FlightInspDatesDep
           inspOriginData={inspOriginData}
-          inspDestinationData={inspDestinationData}
+          // inspDestinationData={inspDestinationData}
+          airports={airports}
         />
       </div>
       <div className="flight-summaries">
         {dataAndPhotos.map((flight) => (
           <FlightSummary
-            key={flight.id}
+            key={flight.price}
             destination={flight.destination}
             price={flight.price}
             onSelect={onFlightSelect}
@@ -48,6 +49,12 @@ const FlightSummaries = ({
 };
 
 FlightSummaries.propTypes = {
+  airports: PropTypes.arrayOf(
+    PropTypes.shape({
+      itineraries: PropTypes.string,
+      iataCode: PropTypes.string,
+    })
+  ).isRequired,
   data: PropTypes.arrayOf(
     PropTypes.shape({
       destination: PropTypes.string,
@@ -56,6 +63,7 @@ FlightSummaries.propTypes = {
       }),
     })
   ).isRequired,
+  inspOriginData: PropTypes.string.isRequired,
   onFlightSelect: PropTypes.func.isRequired,
   photos: PropTypes.arrayOf(
     PropTypes.shape({

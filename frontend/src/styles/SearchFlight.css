@@ -19,6 +19,7 @@
   border-bottom-left-radius: 10px;
   color: black;
 }
+
 h4.form-row {
   padding: 0px;
 }
@@ -28,6 +29,7 @@ h4.form-row {
   justify-content: flex-end;
   padding: 0.5em;
 }
+
 .form-row > label {
   padding-right: 0.5em;
   display: flex;
@@ -42,6 +44,7 @@ input {
 .form-row > input {
   flex: 1;
 }
+
 .form-row > input,
 .form-row > button {
   padding: 0.5em;
@@ -50,6 +53,7 @@ input {
   border-radius: 4px;
   margin: 5px;
 }
+
 .form-row > button {
   background: rgb(62, 62, 146);
   color: white;

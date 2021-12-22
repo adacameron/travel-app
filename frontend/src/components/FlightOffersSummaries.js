@@ -1,9 +1,4 @@
-/* eslint-disable func-names */
-/* eslint-disable prefer-const */
-/* eslint-disable no-shadow */
-/* eslint-disable react/prop-types */
 /* eslint-disable no-console */
-/* eslint-disable no-unused-vars */
 import React from "react";
 import PropTypes from "prop-types";
 import FlightOffersSummary from "./FlightOffersSummary";
@@ -12,14 +7,13 @@ import FlightDatesDeparture from "./FlightDatesDeparture";
 
 const FlightOffersSummaries = ({
   data,
-  onFlightSelect,
   photos,
   departureDate,
   destinationData,
   originData,
 }) => {
-  console.log(photos, "photos");
-  console.log(destinationData, "destinationData");
+  // console.log(photos, "photos");
+  // console.log(destinationData, "destinationData");
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
@@ -31,13 +25,13 @@ const FlightOffersSummaries = ({
       destination: destinationData,
     };
   });
-  console.log(dataAndPhotos, "dataAndPhotos");
 
   return (
     <>
       <div className="flight-details-card">
         <FlightDatesDeparture
           originData={originData}
+          // eslint-disable-next-line react/prop-types
           passengers={Object.keys(data[0].travelerPricings).length}
           destinationData={destinationData}
           departureDate={departureDate}
@@ -50,7 +44,6 @@ const FlightOffersSummaries = ({
             destination={flight.destination}
             price={flight.price.base}
             duration={flight.itineraries[0].segments[0].duration}
-            onSelect={onFlightSelect}
             photo={flight.photo}
           />
         ))}
@@ -78,10 +71,38 @@ FlightOffersSummaries.propTypes = {
     PropTypes.shape({
       price: PropTypes.shape({
         base: PropTypes.number,
-      }).isRequired,
+      }),
+    }),
+    PropTypes.shape({
+      travelerPricings: PropTypes.arrayOf(
+        PropTypes.shape({
+          travelerId: PropTypes.string,
+          fareOption: PropTypes.string,
+          travelerType: PropTypes.string,
+          price: PropTypes.shape({
+            currency: PropTypes.string,
+            total: PropTypes.string,
+            base: PropTypes.string,
+          }),
+          fareDetailsBySegment: PropTypes.arrayOf(
+            PropTypes.shape({
+              segmentId: PropTypes.string,
+              cabin: PropTypes.string,
+              fareBasis: PropTypes.string,
+              brandedFare: PropTypes.string,
+              class: PropTypes.string,
+              includedCheckedBags: PropTypes.shape({
+                quantity: PropTypes.number,
+              }),
+            })
+          ),
+        })
+      ),
     })
   ).isRequired,
-  onFlightSelect: PropTypes.func.isRequired,
+  departureDate: PropTypes.string.isRequired,
+  destinationData: PropTypes.string.isRequired,
+  originData: PropTypes.string.isRequired,
   photos: PropTypes.arrayOf(
     PropTypes.shape({
       src: PropTypes.shape({

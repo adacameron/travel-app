@@ -2,23 +2,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
+import "../styles/flightdatesdeparture.css";
 
 const FlightDatesDeparture = (props) => {
   const { originData, passengers, departureDate, destinationData } = props;
   console.log(destinationData, "destinationData");
   return (
-    <div
-      className="flight-dates-departure"
-      style={{ border: "3px solid purple", textAlign: "center" }}
-    >
-      <div className="flight-dates-departure__passengers">
-        {`${passengers}`} Adults{" "}
+    <div className="flight-dates-departure">
+      <div className="flight-dates-departure__passengers-date">
+        {`${passengers}`} Adults | Departing on{" "}
+        {moment(departureDate).format("ddd Do MMM")}{" "}
       </div>
       <div className="flight-dates-departure__origin-destination">
         {`${originData} - ${destinationData}`}{" "}
-      </div>
-      <div className="flight-dates-departure__dates">
-        Departing on {moment(departureDate).format("ddd Do MMM")}{" "}
       </div>
     </div>
   );
