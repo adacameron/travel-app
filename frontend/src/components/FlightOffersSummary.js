@@ -12,13 +12,13 @@ const FlightOffersSummary = (props) => {
       </div>
       <div className="flight-offers-summary__destination">{destination}</div>
       <div className="flight-offers-summary__duration">{duration}</div>
-      <div className="flight-offers-summary__price">£{price}</div>
+      <div className="flight-offers-summary__price">£{price} per person</div>
       <button
         type="button"
         onClick={() => onSelect(console.log("tbc - link to external site"))}
         className="flight-offers-summary__button"
       >
-        Book Flight
+        Select Flight
       </button>
     </div>
   );

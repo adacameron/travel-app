@@ -2,12 +2,6 @@
 import React from "react";
 import "../styles/SearchFlight.css";
 import PropTypes from "prop-types";
-// import getOffers from "../requests/getOffers";
-
-// const handleSearch = (event) => {
-//   event.preventDefault();
-//   getOffers();
-// };
 
 const SearchFlight = ({
   searchText,
@@ -50,6 +44,7 @@ const SearchFlight = ({
   return (
     <form className="search-form">
       <ul className="search-form-container">
+        <h4 className="form-row">Search flights by destination...</h4>
         <li className="form-row">
           <label className="form-label" htmlFor="origin-input">
             Origin{" "}
@@ -116,7 +111,7 @@ const SearchFlight = ({
           </button>
         </li>
         {/* FLIGHT INSPIRATION API FORM */}
-        <h4 className="form-row">Any destination</h4>
+        <h4 className="form-row">...Or search all destinations</h4>
         <li className="form-row">
           <label className="form-label" htmlFor="insp-origin-input">
             Origin{" "}

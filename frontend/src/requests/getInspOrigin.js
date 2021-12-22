@@ -2,17 +2,16 @@
 /* eslint-disable no-console */
 import axios from "axios";
 
-const getLocation = (locationCode) => {
+const getInspOrigin = (origin) => {
   let endpoint = "http://localhost:1338/location/";
 
-  if (locationCode) {
-    endpoint += `${locationCode}`;
+  if (origin) {
+    endpoint += `${origin}`;
   }
   return axios
 
     .get(endpoint)
     .then((res) => {
-      console.log("res.data[0].name", res.data[0].name);
       return res.data[0].name;
     })
     .catch((err) => {
@@ -20,4 +19,4 @@ const getLocation = (locationCode) => {
     });
 };
 
-export default getLocation;
+export default getInspOrigin;
