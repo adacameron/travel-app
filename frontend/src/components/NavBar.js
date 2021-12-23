@@ -7,7 +7,7 @@ const NavBar = () => {
   return (
     <div className="navbar">
       <img src={logo} className="navbar-logo" alt="Logo" />
-      <h1>Travel App</h1>
+      <h1>FlyMe</h1>
       <div className="navbar-links">
         <ul className="navbar-links-list">
           <li className="navbar-links-item">

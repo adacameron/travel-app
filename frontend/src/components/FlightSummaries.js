@@ -8,7 +8,6 @@ const FlightSummaries = ({
   data,
   onFlightSelect,
   photos,
-  // inspDestinationData,
   inspOriginData,
   airports,
 }) => {
@@ -29,7 +28,6 @@ const FlightSummaries = ({
       <div className="flight-details-card">
         <FlightInspDatesDep
           inspOriginData={inspOriginData}
-          // inspDestinationData={inspDestinationData}
           airports={airports}
         />
       </div>

@@ -1,0 +1,23 @@
+.flight-details-nav {
+  text-align: center;
+  font-family: "Montserrat";
+  letter-spacing: 0.1rem;
+  margin-top: -2px;
+  color: white;
+  background-color: #190933;
+  padding: 1em;
+}
+
+.flight-dates-departure__dates {
+    padding: 0.5em;
+}
+
+.flight-dates-departure__passengers-date {
+  padding: 0.5em;
+}
+
+h1 {
+  padding: 0.5em;
+  font-size: 2rem;
+  font-weight: 900; 
+}

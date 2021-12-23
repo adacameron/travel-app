@@ -8,18 +8,82 @@
   display: block;
   padding-top: 1rem;
   padding-bottom: 2rem;
-      background-image:linear-gradient(to bottom right, #ece5f8, rgb(123 106 42 / 10%));  
-
+  background-image: linear-gradient(
+    to bottom right,
+    #ece5f8,
+    rgb(123 106 42 / 10%)
+  );
 }
 
-.flight-details__price {
-  margin: 1px 1px 1px 1px;
-  padding: 0.5rem;
-  font-size: 20px;
+.flight-details__outbound-box {
+  background-color: whitesmoke;
+  margin: 1em;
+  border-radius: 10px;
+  padding: 1em;
+  display: block;
+}
+
+.flight-details__button-box {
+  background-color: whitesmoke;
+  margin: 1em;
+  border-radius: 10px;
+  padding: 1em;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 80px;
+}
+
+.flight-details__outbound {
+  float: left;
+  margin: 0 91px 0 48px;
+  font-weight: bold;
+}
+
+.flight-details__total {
+  font-weight: bold;
+}
+
+.flight-details__outbound-date {
+  margin: -76.4em -4em 0.3em 0;
+  display: inline-block;
+  padding: 40px;
+}
+
+.flight-details__outbound-time {
+  margin: -76.4em 18em 0.3em 0;
+  font-size: 2em;
+  padding-left: 40px;
+  float: left;
+  margin: -32px 69px 68px 22px;
+}
+
+.flight-details__return-time {
+  margin: -76.4em 18em 0.3em 0;
+  font-size: 2em;
+  padding-left: 40px;
+  float: right;
+  margin: -32px 69px 68px 22px;
+}
+
+.flight-details__outbound-airport {
+  float: left;
+  margin: 45px 53px 15px -134px;
+}
+
+.flight-details__arriving-airport {
+  float: right;
+  margin: 45px -113px 15px -134px;
+}
+
+.flight-details__duration {
+  display: inline-block;
+  margin: 45px -78px 15px -134px;
+  padding-left: 0.25rem;
 }
 
 .flight-details__button {
-  margin: 1px 1px 1px 1px;
   padding: 0.5rem;
   font-size: 20px;
   border-radius: 5px;
@@ -28,7 +92,6 @@
   padding: 12px;
   border: none;
   font-weight: bold;
-  margin: 10px 1px 1px 1px;
 }
 
 .flight-details__destination {
@@ -41,5 +104,15 @@
 
 .flight-details__image img {
   width: 300px;
+  height: 300px;
+  border-radius: 12px;
   padding: 0.5rem;
+}
+
+.flight-details__flightsymbol img {
+  width: 4rem;
+  height: 4rem;
+  padding-left: 0.25rem;
+  margin: -56.400000000000006em 2em -1.6999999999999993em 0;
+  display: inline-block;
 }

@@ -8,9 +8,6 @@ const getInspLocation = (destinations) => {
   destinations.forEach((destination) => {
     endpoint += `${destination}`;
   });
-  //   if (destinations) {
-  //     endpoint += `${destinations[0]}`;
-  //   }
   console.log(endpoint, "endpoint");
   return axios
 
