@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React from "react";
 import "../styles/SearchFlight.css";
 import PropTypes from "prop-types";
@@ -159,7 +158,7 @@ const SearchFlight = ({
         <li className="form-row">
           {" "}
           <label className="form-label" htmlFor="budget-input">
-            Budget £{" "}
+            Budget{" "}
           </label>
           <div className="input-box">
             <input
@@ -186,22 +185,22 @@ const SearchFlight = ({
 export default SearchFlight;
 
 SearchFlight.propTypes = {
-  searchText: PropTypes.string.isRequired,
-  setSearchText: PropTypes.func.isRequired,
-  onSearch: PropTypes.func.isRequired,
-  locationCode: PropTypes.string.isRequired,
-  setLocationCode: PropTypes.func.isRequired,
-  departureDate: PropTypes.string.isRequired,
-  setDepartureDate: PropTypes.func.isRequired,
   adults: PropTypes.number.isRequired,
-  setAdults: PropTypes.func.isRequired,
-  inspOnSearch: PropTypes.func.isRequired,
+  days: PropTypes.number.isRequired,
+  departureDate: PropTypes.string.isRequired,
   inspDepartureDate: PropTypes.string.isRequired,
-  setInspDepartureDate: PropTypes.func.isRequired,
-  days: PropTypes.string.isRequired,
-  setDays: PropTypes.func.isRequired,
+  inspOnSearch: PropTypes.func.isRequired,
+  locationCode: PropTypes.string.isRequired,
   maxPrice: PropTypes.number.isRequired,
-  setMaxPrice: PropTypes.func.isRequired,
+  onSearch: PropTypes.func.isRequired,
   origin: PropTypes.string.isRequired,
+  searchText: PropTypes.string.isRequired,
+  setAdults: PropTypes.func.isRequired,
+  setDays: PropTypes.func.isRequired,
+  setDepartureDate: PropTypes.func.isRequired,
+  setInspDepartureDate: PropTypes.func.isRequired,
+  setLocationCode: PropTypes.func.isRequired,
+  setMaxPrice: PropTypes.func.isRequired,
   setOrigin: PropTypes.func.isRequired,
+  setSearchText: PropTypes.func.isRequired,
 };

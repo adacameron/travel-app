@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
@@ -6,7 +5,6 @@ import "../styles/flightdatesdeparture.css";
 
 const FlightDatesDeparture = (props) => {
   const { originData, passengers, departureDate, destinationData } = props;
-  console.log(destinationData, "destinationData");
   return (
     <div className="flight-dates-departure">
       <div className="flight-dates-departure__passengers-date">

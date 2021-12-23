@@ -9,7 +9,7 @@ import getOffersSearch from "../requests/getOffersSearch";
 import getInspirationSearch from "../requests/getInspirationSearch";
 import FlightSummaries from "./FlightSummaries";
 import FlightOffersSummaries from "./FlightOffersSummaries";
-// import InspirationFlightDetails from "./InspirationFlightDetails";
+import InspirationFlightDetails from "./InspirationFlightDetails";
 import getImages from "../requests/getImages";
 import getLocation from "../requests/getLocation";
 import getOriginLocation from "../requests/getOriginLocation";
@@ -56,16 +56,16 @@ const App = ({ airports }) => {
     const destinationResults = await getLocation(locationCode);
     // passing city name to FlightOffersSummaries & FlightDatesDeparture
     setDestinationData(destinationResults);
-    console.log(destinationResults, "destinationResults");
-    console.log(destinationData, "destiantionData");
     const originResults = await getOriginLocation(searchText);
     setOriginData(originResults);
     navigate("/flight-offers-summaries");
     // eslint-disable-next-line no-unused-vars
-    const selectedOffersFlight = flightResults.find(
-      (flight) => flight.destination === destinationData
-    );
   };
+  const selectedOffersFlight = flightResults.find(
+    (flight) =>
+      flight.itineraries[0].segments[0].arrival.iataCode === locationCode
+  );
+  console.log(selectedOffersFlight, "selectedOffersFlight");
 
   const handleInspirationSearch = async (event) => {
     event.preventDefault();
@@ -78,19 +78,21 @@ const App = ({ airports }) => {
     setInspirationResults(inspResults);
     const inspOriginResults = await getInspOrigin(origin);
     setInspOriginData(inspOriginResults);
-    console.log(inspOriginData, "inspOriginData");
     const imageResults = await getImages();
     setImages(imageResults);
     navigate("/flight-inspiration-summaries");
+    // eslint-disable-next-line no-unused-vars
   };
+  const selectedInspFlight = inspirationResults.find((flight) => flight);
+  console.log(selectedInspFlight, "selectedInspFlight");
 
   const handleInspirationSelect = () => {
+    setMaxPrice(maxPrice);
     navigate("/inspiration-flight-details");
   };
 
   const handleOffersSelect = () => {
     setDestinationData(destinationData);
-    console.log("destinationResults", destinationData);
     navigate("/offers-flight-details");
   };
 
@@ -155,8 +157,27 @@ const App = ({ airports }) => {
           path="/offers-flight-details"
           element={
             <>
-              {handleOriginSearch && (
-                <OffersFlightDetails data={flightResults[0]} />
+              {selectedOffersFlight && (
+                <OffersFlightDetails data={selectedOffersFlight} />
+              )}
+            </>
+          }
+        />
+
+        {/* <>
+          <ForecastSummaries
+            forecasts={forecasts}
+            onForecastSelect={handleForecastSelect}
+          />
+          {selectedForecast && <ForecastDetails forecast={selectedForecast} />}
+        </> */}
+
+        <Route
+          path="/inspiration-flight-details"
+          element={
+            <>
+              {selectedInspFlight && (
+                <InspirationFlightDetails data={selectedInspFlight} />
               )}
             </>
           }
