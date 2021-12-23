@@ -8,11 +8,17 @@
   display: block;
   padding-top: 1rem;
   padding-bottom: 2rem;
-      background-image:linear-gradient(to bottom right, #ece5f8, rgb(123 106 42 / 10%));  
-
+  background-image:linear-gradient(to bottom right, #ece5f8, rgb(123 106 42 / 10%));  
+  letter-spacing: 0.1rem;
 }
 
 .flight-summary__price {
+  margin: 1px 1px 1px 1px;
+  padding: 0.5rem;
+  font-size: 20px;
+}
+
+.flight-summary__duration {
   margin: 1px 1px 1px 1px;
   padding: 0.5rem;
   font-size: 20px;
@@ -29,6 +35,13 @@
   border: none;
   font-weight: bold;
   margin: 10px 1px 1px 1px;
+  letter-spacing: 0.1rem;
+}
+
+.flight-summary__button:hover,
+.flight-summary__button--active {
+  background-color: #3e3e92;
+  color: white;
 }
 
 .flight-summary__destination {
@@ -37,6 +50,7 @@
   padding: 0.5rem;
   font-size: 20px;
   align-items: center;
+  letter-spacing: 0.2rem;
 }
 
 .flight-summary__image img {

@@ -8,8 +8,8 @@
 
 .navbar-logo {
   height: 38px;
-  filter: invert(97%) sepia(46%) saturate(6016%) hue-rotate(128deg)
-    brightness(94%) contrast(100%);
+  /* filter: invert(97%) sepia(46%) saturate(6016%) hue-rotate(128deg)
+    brightness(94%) contrast(100%); */
   float: left;
   margin: 0 10px 0 0;
 }

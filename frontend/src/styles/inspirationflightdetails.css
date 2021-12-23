@@ -13,6 +13,7 @@
     #ece5f8,
     rgb(123 106 42 / 10%)
   );
+  letter-spacing: 0.1rem;
 }
 
 .flight-details__outbound-box {
@@ -92,6 +93,13 @@
   padding: 12px;
   border: none;
   font-weight: bold;
+  letter-spacing: 0.1rem;
+}
+
+.flight-details__button:hover,
+.flight-details__button--active {
+  background-color: #3e3e92;
+  color: white;
 }
 
 .flight-details__destination {
