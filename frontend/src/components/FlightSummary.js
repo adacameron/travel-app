@@ -15,7 +15,7 @@ const FlightSummary = (props) => {
       <div className="flight-summary__price">£{price.total} per person</div>
       <button
         type="button"
-        onClick={() => onSelect(console.log("tbc - link to external site"))}
+        onClick={() => onSelect(destination)}
         className="flight-summary__button"
       >
         Select Flight

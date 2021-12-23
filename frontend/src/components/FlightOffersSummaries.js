@@ -10,6 +10,7 @@ const FlightOffersSummaries = ({
   photos,
   departureDate,
   destinationData,
+  onFlightSelect,
   originData,
 }) => {
   // console.log(photos, "photos");
@@ -45,6 +46,7 @@ const FlightOffersSummaries = ({
             price={flight.price.base}
             duration={flight.itineraries[0].segments[0].duration}
             photo={flight.photo}
+            onSelect={onFlightSelect}
           />
         ))}
       </div>
@@ -102,6 +104,7 @@ FlightOffersSummaries.propTypes = {
   ).isRequired,
   departureDate: PropTypes.string.isRequired,
   destinationData: PropTypes.string.isRequired,
+  onFlightSelect: PropTypes.func.isRequired,
   originData: PropTypes.string.isRequired,
   photos: PropTypes.arrayOf(
     PropTypes.shape({

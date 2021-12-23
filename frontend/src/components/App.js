@@ -9,11 +9,12 @@ import getOffersSearch from "../requests/getOffersSearch";
 import getInspirationSearch from "../requests/getInspirationSearch";
 import FlightSummaries from "./FlightSummaries";
 import FlightOffersSummaries from "./FlightOffersSummaries";
-import InspirationFlightDetails from "./InspirationFlightDetails";
+// import InspirationFlightDetails from "./InspirationFlightDetails";
 import getImages from "../requests/getImages";
 import getLocation from "../requests/getLocation";
 import getOriginLocation from "../requests/getOriginLocation";
 import getInspOrigin from "../requests/getInspOrigin";
+import OffersFlightDetails from "./OffersFlightDetails";
 // import getInspLocation from "../requests/getInspLocation";
 
 const App = ({ airports }) => {
@@ -34,8 +35,6 @@ const App = ({ airports }) => {
   const [inspDepartureDate, setInspDepartureDate] = useState("");
   const [days, setDays] = useState(0);
   const [maxPrice, setMaxPrice] = useState(0);
-  // const [inspDestinationData, setInspDestinationData] = useState([]);
-
   const [inspirationResults, setInspirationResults] = useState([]);
   const [inspOriginData, setInspOriginData] = useState([]);
 
@@ -57,9 +56,15 @@ const App = ({ airports }) => {
     const destinationResults = await getLocation(locationCode);
     // passing city name to FlightOffersSummaries & FlightDatesDeparture
     setDestinationData(destinationResults);
+    console.log(destinationResults, "destinationResults");
+    console.log(destinationData, "destiantionData");
     const originResults = await getOriginLocation(searchText);
     setOriginData(originResults);
     navigate("/flight-offers-summaries");
+    // eslint-disable-next-line no-unused-vars
+    const selectedOffersFlight = flightResults.find(
+      (flight) => flight.destination === destinationData
+    );
   };
 
   const handleInspirationSearch = async (event) => {
@@ -71,24 +76,22 @@ const App = ({ airports }) => {
       maxPrice
     );
     setInspirationResults(inspResults);
-    console.log("inspResults", inspResults);
-    // const destinations = inspResults.map((flight) => {
-    //   return flight.destination;
-    // });
-    // console.log("destinations", destinations);
-    // const inspDestinationResults = await getInspLocation(destinations);
-    // console.log(inspDestinationResults, "inspDestinationResults1");
-    // setInspDestinationData(inspDestinationResults);
-    // console.log(inspDestinationResults, "inspDestinationResults2");
     const inspOriginResults = await getInspOrigin(origin);
-    console.log(inspOriginResults, "inspOriginResults");
     setInspOriginData(inspOriginResults);
     console.log(inspOriginData, "inspOriginData");
     const imageResults = await getImages();
     setImages(imageResults);
-    // setInspDestinationData(inspDestinationResults);
-    // console.log(inspDestinationData, "inspDestinationData");
     navigate("/flight-inspiration-summaries");
+  };
+
+  const handleInspirationSelect = () => {
+    navigate("/inspiration-flight-details");
+  };
+
+  const handleOffersSelect = () => {
+    setDestinationData(destinationData);
+    console.log("destinationResults", destinationData);
+    navigate("/offers-flight-details");
   };
 
   return (
@@ -127,9 +130,9 @@ const App = ({ airports }) => {
             <FlightSummaries
               data={inspirationResults}
               photos={images}
-              // inspDestinationData={inspDestinationData}
               inspOriginData={inspOriginData}
               airports={airports}
+              onFlightSelect={handleInspirationSelect}
             />
           }
         />
@@ -140,17 +143,23 @@ const App = ({ airports }) => {
             <FlightOffersSummaries
               departureDate={departureDate}
               data={flightResults}
-              // onFlightSelect={handleInspirationSelect}
               photos={images}
               destinationData={destinationData}
               originData={originData}
+              onFlightSelect={handleOffersSelect}
             />
           }
         />
 
         <Route
-          path="/inspiration-flight-details"
-          element={<InspirationFlightDetails data={inspirationResults} />}
+          path="/offers-flight-details"
+          element={
+            <>
+              {handleOriginSearch && (
+                <OffersFlightDetails data={flightResults[0]} />
+              )}
+            </>
+          }
         />
       </Routes>
     </>
