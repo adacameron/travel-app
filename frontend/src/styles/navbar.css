@@ -15,10 +15,12 @@
 }
 
 .navbar h1 {
-  font-size: 1.5em;
-  letter-spacing: 0.1rem;
+  font-size: 2em;
+  letter-spacing: 0.8rem;
   margin: 0.6em 0 0.3em 0;
   display: inline-block;
+  font-family: 'Yeseva One', cursive;
+  font-style: italic;
 }
 
 .navbar-links {
@@ -26,7 +28,6 @@
   margin-left: 600px;
   padding-top: 20px;
   display: flex;
-  letter-spacing: 0.1rem;
 }
 
 .navbar-links-list {
@@ -40,7 +41,7 @@
   display: inline-block;
   font-size: 1rem;
   font-weight: bold;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.3rem;
   padding: 0.3125rem 0.75rem;
   padding-left: 0;
 }

@@ -1,38 +1,51 @@
-/* eslint-disable react/prop-types */
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-alert */
 import React from "react";
-import PropTypes from "prop-types";
 import "../styles/inspirationflightdetails.css";
+import flightsymbol from "../assets/flightsymbol.svg";
+import amsterdam from "../assets/amsterdam.jpg";
+import FlightDetailsInspNav from "./FlightDetailsInspNav";
 
-const InspirationFlightDetails = ({ inspirationFlight }) => {
-  const { destination, price } = inspirationFlight;
+const InspirationFlightDetails = () => {
+  function buttonConfirm() {
+    confirm("Click to review and book your trip on an external site");
+  }
   return (
-    <div
-      className="flight-details"
-      style={{ border: "3px solid purple", textAlign: "center" }}
-    >
-      <div className="flight-details__image">
-        {/* {image} */}
-        <p>Image</p>
+    <>
+      <>
+        <FlightDetailsInspNav />
+      </>
+      <div className="flight-details">
+        <div className="flight-details__image">
+          <img src={amsterdam} alt="travel" />
+        </div>
+        <div className="flight-details__outbound-box">
+          <div className="flight-details__outbound"> OUTBOUND</div>
+          <div className="flight-details__outbound-date">Thur 6 Jan 2021</div>
+          <div className="flight-details__flightsymbol">
+            <img src={flightsymbol} alt="travel" />
+          </div>
+          <div className="flight-details__outbound-time">11:45</div>
+          <div className="flight-details__outbound-airport">LHR</div>
+          <div className="flight-details__return-time">14:05</div>
+          <div className="flight-details__arriving-airport">AMS</div>
+          <div className="flight-details__duration">1hr20</div>
+        </div>
+        <div className="flight-details__button-box">
+          <div className="flight-details__total">TOTAL £104.40</div>
+          <div className="flight-details__adults">2 adults</div>
+
+          <button
+            type="button"
+            className="flight-details__button"
+            onClick={() => buttonConfirm()}
+          >
+            Book Flights
+          </button>
+        </div>
       </div>
-      <div className="flight-details__destination">{destination}</div>
-
-      <div className="flight-details__price">£{price.total}</div>
-      <button type="button" className="flight-details__button">
-        Book Flight
-      </button>
-    </div>
+    </>
   );
-};
-
-InspirationFlightDetails.propTypes = {
-  inspirationFlight: PropTypes.arrayOf(
-    PropTypes.shape({
-      destination: PropTypes.string,
-      price: PropTypes.shape({
-        total: PropTypes.number,
-      }),
-    })
-  ).isRequired,
 };
 
 export default InspirationFlightDetails;

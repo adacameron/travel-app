@@ -13,8 +13,8 @@ const FlightOffersSummaries = ({
   onFlightSelect,
   originData,
 }) => {
-  // console.log(photos, "photos");
-  // console.log(destinationData, "destinationData");
+  console.log(photos, "photos");
+  console.log(destinationData, "destinationData");
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
@@ -26,7 +26,7 @@ const FlightOffersSummaries = ({
       destination: destinationData,
     };
   });
-
+  console.log("dataAnd Photos", dataAndPhotos);
   return (
     <>
       <div className="flight-details-card">
