@@ -7,11 +7,11 @@
 }
 
 .navbar-logo {
+  margin-left: 80px;
   height: 38px;
   /* filter: invert(97%) sepia(46%) saturate(6016%) hue-rotate(128deg)
     brightness(94%) contrast(100%); */
   float: left;
-  margin: 0 10px 0 0;
 }
 
 .navbar h1 {
@@ -87,5 +87,14 @@
   .navbar-links-item {
     display: inline;
     padding: 1px;
+  }
+
+  .navbar-logo {
+    margin-top: 10px;
+    margin-left: 30px;
+    height: 38px;
+    /* filter: invert(97%) sepia(46%) saturate(6016%) hue-rotate(128deg)
+      brightness(94%) contrast(100%); */
+    float: left;
   }
 }

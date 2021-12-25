@@ -4,13 +4,16 @@ import PropTypes from "prop-types";
 
 const FlightOffersSummary = (props) => {
   const { destination, price, duration, onSelect, photo } = props;
+
+  const newDuration = duration.slice(2);
+
   return (
     <div className="flight-offers-summary">
       <div className="flight-offers-summary__image">
         <img src={photo} alt="travel" />
       </div>
       <div className="flight-offers-summary__destination">{destination}</div>
-      <div className="flight-offers-summary__duration">{duration}</div>
+      <div className="flight-offers-summary__duration">{newDuration}</div>
       <div className="flight-offers-summary__price">£{price} per person</div>
       <button
         type="button"
