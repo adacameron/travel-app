@@ -65,9 +65,17 @@ input {
 @media (max-width: 600px) {
   .search-form-container {
     margin: 0;
+    background-image: none;
+    width: fit-content;
+    color: white;
   }
 
   .search-form {
     width: 600px;
+  }
+
+  .form-row > input,
+  .form-row > button {
+    background-color: #190933;
   }
 }

@@ -19,13 +19,13 @@
   letter-spacing: 0.8rem;
   margin: 0.6em 0 0.3em 0;
   display: inline-block;
-  font-family: 'Yeseva One', cursive;
+  font-family: "Yeseva One", cursive;
   font-style: italic;
 }
 
 .navbar-links {
   margin: 0;
-  margin-left: 600px;
+  margin-left: 93px;
   padding-top: 20px;
   display: flex;
 }
@@ -82,5 +82,10 @@
   }
   .navbar-links {
     margin-left: 0;
+    margin-bottom: 10px;
+  }
+  .navbar-links-item {
+    display: inline;
+    padding: 1px;
   }
 }
