@@ -6,8 +6,10 @@ import "../styles/navbar.css";
 const NavBar = () => {
   return (
     <div className="navbar">
-      <img src={logo} className="navbar-logo" alt="Logo" />
-      <h1>FlyMe</h1>
+      <div className="navbar-logo-h1">
+        <img src={logo} className="navbar-logo" alt="Logo" />
+        <h1>FlyMe</h1>
+      </div>
       <div className="navbar-links">
         <ul className="navbar-links-list">
           <li className="navbar-links-item">
