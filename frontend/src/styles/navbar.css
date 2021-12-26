@@ -9,8 +9,6 @@
 .navbar-logo {
   margin-left: 80px;
   height: 38px;
-  /* filter: invert(97%) sepia(46%) saturate(6016%) hue-rotate(128deg)
-    brightness(94%) contrast(100%); */
   float: left;
 }
 
@@ -25,9 +23,9 @@
 
 .navbar-links {
   margin: 0;
-  margin-left: 93px;
+  margin-left: 77px;
   padding-top: 20px;
-  display: flex;
+  /* display: flex; */
 }
 
 .navbar-links-list {
