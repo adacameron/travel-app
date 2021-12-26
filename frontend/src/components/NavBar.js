@@ -11,8 +11,9 @@ const NavBar = () => {
       <div className="navbar-logo-h1">
         <img src={logo} className="navbar-logo" alt="Logo" />
         <h1>FlyMe</h1>
-      <img src={logo} className="navbar-logo" alt="Logo" />
-      <h1>FlyMe</h1>
+        <img src={logo} className="navbar-logo" alt="Logo" />
+        <h1>FlyMe</h1>
+      </div>
       <div className="icons">
         <img src={menuIcon} alt="Menu Icon" />
         <img src={userIcon} alt="User Icon" />
