@@ -24,6 +24,15 @@
   font-style: italic;
 }
 
+.icons {
+  display: inline;
+  margin-left: 850px;
+}
+
+.icons img {
+  margin-left: 50px;
+}
+
 .navbar-links {
   margin: 0;
   margin-left: 244px;
@@ -97,5 +106,14 @@
     /* filter: invert(97%) sepia(46%) saturate(6016%) hue-rotate(128deg)
       brightness(94%) contrast(100%); */
     float: left;
+  }
+
+  .icons {
+    display: inline;
+    margin-left: 10px;
+  }
+
+  .icons img {
+    margin-left: 20px;
   }
 }
