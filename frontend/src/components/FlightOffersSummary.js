@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const FlightOffersSummary = (props) => {
   const { destination, price, duration, onSelect, photo } = props;
 
-  const newDuration = duration.slice(2);
+  const newDuration = duration.slice(2).toLowerCase();
 
   return (
     <div className="flight-offers-summary">
