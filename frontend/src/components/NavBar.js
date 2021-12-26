@@ -8,6 +8,9 @@ import userIcon from "../assets/iconmonstr-user-20.svg";
 const NavBar = () => {
   return (
     <div className="navbar">
+      <div className="navbar-logo-h1">
+        <img src={logo} className="navbar-logo" alt="Logo" />
+        <h1>FlyMe</h1>
       <img src={logo} className="navbar-logo" alt="Logo" />
       <h1>FlyMe</h1>
       <div className="icons">
