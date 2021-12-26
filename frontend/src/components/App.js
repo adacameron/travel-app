@@ -1,21 +1,19 @@
-/* eslint-disable no-console */
 import React, { useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import "../styles/App.css";
 import SearchFlight from "./SearchFlight";
 import NavBar from "./NavBar";
-import getOffersSearch from "../requests/getOffersSearch";
-import getInspirationSearch from "../requests/getInspirationSearch";
 import FlightSummaries from "./FlightSummaries";
 import FlightOffersSummaries from "./FlightOffersSummaries";
 import InspirationFlightDetails from "./InspirationFlightDetails";
+import getOffersSearch from "../requests/getOffersSearch";
 import getImages from "../requests/getImages";
 import getLocation from "../requests/getLocation";
 import getOriginLocation from "../requests/getOriginLocation";
 import getInspOrigin from "../requests/getInspOrigin";
+import getInspirationSearch from "../requests/getInspirationSearch";
 import OffersFlightDetails from "./OffersFlightDetails";
-// import getInspLocation from "../requests/getInspLocation";
 
 const App = ({ airports }) => {
   const navigate = useNavigate();
@@ -59,13 +57,11 @@ const App = ({ airports }) => {
     const originResults = await getOriginLocation(searchText);
     setOriginData(originResults);
     navigate("/flight-offers-summaries");
-    // eslint-disable-next-line no-unused-vars
   };
   const selectedOffersFlight = flightResults.find(
     (flight) =>
       flight.itineraries[0].segments[0].arrival.iataCode === locationCode
   );
-  console.log(selectedOffersFlight, "selectedOffersFlight");
 
   const handleInspirationSearch = async (event) => {
     event.preventDefault();
@@ -81,10 +77,8 @@ const App = ({ airports }) => {
     const imageResults = await getImages();
     setImages(imageResults);
     navigate("/flight-inspiration-summaries");
-    // eslint-disable-next-line no-unused-vars
   };
   const selectedInspFlight = inspirationResults.find((flight) => flight);
-  console.log(selectedInspFlight, "selectedInspFlight");
 
   const handleInspirationSelect = () => {
     setMaxPrice(maxPrice);
