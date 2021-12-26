@@ -19,25 +19,26 @@
   margin-left: 245px;
   margin-top: 10px;
   height: 84px;
-  /* float: left; */
 }
 
 .navbar h1 {
   font-size: 2em;
   letter-spacing: 0.8rem;
-  /* margin: 0.6em -3em -5.7em 32em; */
-  /* display: inline-block; */
   font-family: "Yeseva One", cursive;
   font-style: italic;
+  padding-left: 19px;
 }
 
 .icons {
-  display: inline;
-  margin-left: 850px;
+  float: left;
+  margin-top: -30px;
 }
 
 .icons img {
-  margin-left: 50px;
+  margin-left: 30px;
+  height: 40px;
+  margin-top: 7px;
+  padding: 2px 2px 2px 10px;
 }
 
 .navbar-links {
