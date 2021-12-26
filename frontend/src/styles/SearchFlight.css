@@ -1,10 +1,14 @@
+.search-form {
+  background-color: #f0f0f9;
+}
+
 .search-form-container {
   list-style-type: none;
   border-radius: 3px;
   font-family: "Montserrat";
   letter-spacing: 0.1rem;
   margin-top: -2px;
-  margin-left: 93px;
+  margin-left: 260px;
   margin-right: 93px;
   padding: 20px;
   padding-right: 150px;
@@ -68,6 +72,8 @@ input {
     background-image: none;
     width: fit-content;
     color: white;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .search-form {
