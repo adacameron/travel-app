@@ -1,10 +1,15 @@
 .navbar {
   background-color: white;
   display: block;
-  padding: 0.5em 1em;
   margin-top: 10px;
-  margin-bottom: 0;
+  margin-bottom: 0px;
   width: 80vw;
+}
+
+.container {
+  width: 100vw;
+  background-color: #dadaf7;
+  height: 150px;  
 }
 
 .navbar-logo-h1 {
@@ -12,7 +17,7 @@
   flex-wrap: nowrap;
   justify-content: flex-end;
   align-items: flex-start;
-  margin: 13px 120px -54px 1px;
+  margin: 13px 570px -54px 1px;
 }
 
 .navbar-logo {
@@ -30,8 +35,10 @@
 }
 
 .icons {
-  float: left;
   margin-top: -30px;
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
 }
 
 .icons img {
@@ -43,7 +50,8 @@
 
 .navbar-links {
   margin: 0;
-  margin-left: 244px;
+  margin-left: 339px;
+  margin-bottom: 6px;
   padding-top: 20px;
   display: flex;
 }
@@ -57,11 +65,10 @@
 .navbar-links-item {
   margin: 0;
   display: inline-block;
-  font-size: 1rem;
+  font-size: 1em;
   font-weight: bold;
   letter-spacing: 0.3rem;
-  padding: 0.3125rem 0.75rem;
-  padding-left: 0;
+   padding: 0.3rem 0.75rem;
 }
 
 .navbar-links-item a {
@@ -77,21 +84,14 @@
   background-color: #3e3e92;
   color: white;
 }
-/* iPad */
-@media screen and (min-width: 768px) {
-  .navbar-logo {
-    height: 84px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .navbar-logo {
-    height: 84px;
-    max-width: 160px;
-  }
-}
 
 @media (max-width: 600px) {
+  .navbar-logo-h1 {
+    margin: -5px 43px -9px 43px;
+    display: flex;
+    align-items: baseline;
+    padding: 1px 1px 1px 339px;
+  }
   .navbar {
     margin: 0;
     margin-top: 5px;
@@ -99,29 +99,32 @@
     padding: 0;
   }
   .navbar-links {
-    margin-left: 0;
+    margin-left: 27px;
     margin-bottom: 10px;
   }
   .navbar-links-item {
     display: inline;
     padding: 1px;
+    font-size: 0.84em;
   }
 
   .navbar-logo {
-    margin-top: 10px;
     margin-left: 30px;
     height: 38px;
-    /* filter: invert(97%) sepia(46%) saturate(6016%) hue-rotate(128deg)
-      brightness(94%) contrast(100%); */
-    float: left;
   }
 
   .icons {
     display: inline;
-    margin-left: 10px;
+    margin-top: -80px;
+    margin-left: 1px;
   }
 
   .icons img {
     margin-left: 20px;
+    height: 35px;
+  }
+  .icons-user {
+    display: none;
   }
 }
+

@@ -1,0 +1,104 @@
+.footer {
+  background-color: white;
+  display: block;
+  margin-top: 1px;
+  margin-bottom: 0;
+  width: 80vw;
+}
+
+.container {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  background-color: #dadaf7;
+  margin-top: 60px;
+}
+
+.social-media {
+  margin: 20px 100px 20px 20px;
+  padding: 50px;
+}
+
+.social-media img {
+  padding-left: 32px;
+  height: 25px;
+}
+.footer-links {
+  margin: 20px;
+  padding: 50px;
+}
+
+.footer h2 {
+  letter-spacing: 0.6rem;
+  font-family: "Yeseva One", cursive;
+  font-style: italic;
+  padding-left: 19px;
+}
+
+.footer-links-list {
+  display: flex;
+  list-style-type: none;
+}
+
+.footer-links-item {
+  margin: 0;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  padding: 0.3rem 1.75rem;
+  padding-left: 0;
+}
+
+.footer-links-item a {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.footer-links-item :hover,
+.footer-links-item--active {
+  color: rgb(62, 62, 146);
+}
+
+@media (max-width: 600px) {
+  .footer-logo-h1 {
+    margin: -5px 43px -9px 43px;
+    display: flex;
+    align-items: baseline;
+    padding: 1px 1px 1px 339px;
+  }
+  .footer {
+    margin: 0;
+    margin-top: 5px;
+    margin-bottom: 6px;
+    padding: 0;
+  }
+  .footer-links {
+    margin-left: 27px;
+    margin-bottom: 10px;
+  }
+  .footer-links-item {
+    display: inline;
+    padding: 1px;
+    font-size: 0.84em;
+  }
+
+  .footer-logo {
+    margin-left: 30px;
+    height: 38px;
+  }
+
+  .icons {
+    display: inline;
+    margin-top: -80px;
+    margin-left: 1px;
+  }
+
+  .icons img {
+    margin-left: 20px;
+    height: 35px;
+  }
+  .icons-user {
+    display: none;
+  }
+}
