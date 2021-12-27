@@ -1,17 +1,13 @@
-.search-form {
+.search-form-background {
   background-color: #f0f0f9;
+  display: flex;
+  justify-content: center;
 }
 
 .search-form-container {
   list-style-type: none;
-  border-radius: 3px;
   font-family: "Montserrat";
   letter-spacing: 0.1rem;
-  margin-top: -2px;
-  margin-left: 260px;
-  margin-right: 93px;
-  padding: 20px;
-  padding-right: 150px;
   background-image: url("../assets/searchflight-background.jpg");
   background-position: center;
   background-size: cover;
@@ -23,6 +19,12 @@
   border-bottom-left-radius: 10px;
   color: black;
   font-size: 1.2em;
+  padding: 34px;
+}
+
+.search-form {
+  padding-right: 150px;
+  margin-top: -34px;
 }
 
 h4.form-row {
@@ -45,10 +47,6 @@ input[type="date"] {
   border: 1px solid white;
   border-radius: 4px;
   font-size: 1.2em;
-  padding: 0 10px 0 10px;
-  width: 317px;
-  height: 30px;
-
 }
 
 input {
@@ -56,7 +54,6 @@ input {
   border-radius: 4px;
   font-size: 1.2em;
   padding: 0 10px 0 10px;
-
 }
 
 .form-row > input {
@@ -71,7 +68,6 @@ input {
   border-radius: 4px;
   margin: 5px;
   font-size: 1em;
-
 }
 
 .form-row > button {
@@ -82,22 +78,58 @@ input {
   padding: 0.5em;
 }
 
+.form-row > button:hover {
+  background-color: #190933;
+  border-radius: 4px;
+  border: none;
+  padding: 0.5em;
+}
+
 @media (max-width: 600px) {
+  .search-form-background {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width: 105vw;
+  }
+
   .search-form-container {
-    margin: 0;
+    display: flex;
+    justify-content: center;
     background-image: none;
-    width: fit-content;
+    width: 90vw;
+    height: 90vh;
+    border-top-right-radius: revert;
     color: white;
-    margin-left: 0;
-    margin-right: 0;
+    font-size: 0.8em;
+    padding: 164px;
+    margin-right: 1px;
   }
 
   .search-form {
-    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 100px;
   }
 
-  .form-row > input,
-  .form-row > button {
+  h4.form-row {
     background-color: #190933;
+    padding: 10px;
+    margin-left: 25px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+  }
+
+  input {
+    font-size: 1em;
+  }
+
+  .form-row > button {
+    background-color: #f0f0f9;
+    color: black;
+    font-weight: 900;
   }
 }
