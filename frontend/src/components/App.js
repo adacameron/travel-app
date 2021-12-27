@@ -1,8 +1,14 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
+<<<<<<< Updated upstream
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+=======
+/* eslint-disable */
+import React, { useState } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
+>>>>>>> Stashed changes
 import PropTypes from "prop-types";
 import "../styles/App.css";
 import SearchFlight from "./SearchFlight";
@@ -30,9 +36,28 @@ const App = ({ data, inspirationFlights }) => {
   const [inspirationDestination, setInspirationDestination] = useState(
     inspirationFlights[0].destination
   );
+<<<<<<< Updated upstream
 
   const handleOriginSearch = () => {
     getOffersSearch(searchText, locationCode, departureDate, adults);
+=======
+  console.log(flightResults);
+  const handleInspirationSearch = async (event) => {
+    event.preventDefault();
+    const inspResults = await getInspirationSearch(
+      origin,
+      inspDepartureDate,
+      days,
+      maxPrice
+    );
+    setInspirationResults(inspResults);
+    const inspOriginResults = await getInspOrigin(origin);
+    setInspOriginData(inspOriginResults);
+    const imageResults = await getImages();
+    setImages(imageResults);
+    navigate("/flight-inspiration-summaries");
+    // eslint-disable-next-line no-unused-vars
+>>>>>>> Stashed changes
   };
 
   const handleInspirationSearch = () => {
