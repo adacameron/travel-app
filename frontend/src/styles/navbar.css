@@ -6,7 +6,7 @@
   width: 80vw;
 }
 
-.container {
+.navbar_container {
   width: 100vw;
   background-color: #dadaf7;
   height: 150px;  
@@ -124,6 +124,63 @@
   .icons img {
     margin-left: 20px;
     height: 35px;
+  }
+  .icons-user {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .navbar-logo-h1 {
+    margin: -60px 217px -9px 43px;
+    display: flex;
+    align-items: stretch;
+    padding: 1px 1px 1px 339px;
+  }
+
+  .navbar_container {
+    width: 100vw;
+    background-color: #dadaf7;
+    height: 72px;  
+    margin-top: 20px;
+  }
+  .navbar {
+    margin-left: 7px;
+    margin-top: 5px;
+    margin-bottom: 6px;
+    padding: 0;
+
+  }
+  .navbar h1 {
+    font-size: 1.8em;
+    padding: 10px;
+  }
+  
+  .navbar-links {
+    margin-left: 192px;
+    margin-bottom: -36px;
+  } 
+ .navbar-links-item {
+    display: inline;
+    padding: 1px;
+    font-size: 0.84em;
+  } 
+
+  .navbar-logo {
+    margin-left: 30px;
+    height: 50px;
+  }
+
+  .icons {
+    display: inline;
+    margin-top: -80px;
+    margin-left: 1px;
+  }
+
+  .icons img {
+    margin-left: 58px;
+    height: 35px;
+    margin-top: 19px;
   }
   .icons-user {
     display: none;

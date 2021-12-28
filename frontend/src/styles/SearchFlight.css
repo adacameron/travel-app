@@ -147,14 +147,17 @@ input {
     display: flex;
     justify-content: center;
     background-position: right;
-    width: 85vw;
-    height: 80vh;
+    width: 70vw;
+    height: 65vh;
+    margin-top: 40px;
+    font-size: 0.8em;
+
   }
 
   .search-form {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 537px;
+    padding-left: 469px;
   }
 }
