@@ -18,7 +18,7 @@
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
   color: black;
-  font-size: 1.2em;
+  font-size: 1em;
   padding: 34px;
 }
 
@@ -131,5 +131,30 @@ input {
     background-color: #f0f0f9;
     color: black;
     font-weight: 900;
+  }
+}
+
+@media (max-width: 1200px) {
+  .search-form-background {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width: 105vw;
+  }
+
+  .search-form-container {
+    display: flex;
+    justify-content: center;
+    background-position: right;
+    width: 85vw;
+    height: 80vh;
+  }
+
+  .search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 537px;
   }
 }
