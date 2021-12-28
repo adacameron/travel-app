@@ -166,12 +166,11 @@ const SearchFlight = ({
                 </label>
                 <div className="input-box">
                   <input
-                    type="number"
+                    type="text"
                     id="budget-input"
                     name="budget-input"
                     onChange={handleInputChangePrice}
                     value={maxPrice}
-                    placeholder="£"
                   />
                 </div>
               </li>

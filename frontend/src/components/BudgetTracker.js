@@ -1,6 +1,5 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import React from "react";
 
 const BudgetTracker = ({ budget, setBudget }) => {
   const handleInputBudget = (event) => {

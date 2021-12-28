@@ -9,7 +9,6 @@ const getInspirationFlights = (origin, departure, days, maxPrice) => {
   return axios
     .get(endpoint)
     .then((res) => {
-      console.log(res.data[0].destination, "res.data");
       return res.data;
     })
     .catch((err) => {
