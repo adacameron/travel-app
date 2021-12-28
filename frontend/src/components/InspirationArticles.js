@@ -35,7 +35,9 @@ const InspirationArticles = () => {
         </div>
         <div className="bestbooks-container">
           <img src={bestbooks} alt="best travel books article" />
-          <h3 className="bestbooks-text">How to Get Lost...</h3>
+          <h3 className="bestbooks-text">
+            8 Great Travel Books to Read in 2022
+          </h3>
         </div>
       </div>
     </>
