@@ -4,6 +4,7 @@ h3 {
 
 h2 {
   margin-left: 20px;
+  margin-top: 72px;
 }
 
 .inspiration-articles {
@@ -103,4 +104,18 @@ h2 {
   position: absolute;
   top: 8px;
   left: 16px;
+}
+
+@media (max-width: 600px) {
+  h2 {
+    margin-left: 83px;
+    margin-top: 72px;
+    text-align: center;
+  }
+
+  .inspiration-articles {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
 }
