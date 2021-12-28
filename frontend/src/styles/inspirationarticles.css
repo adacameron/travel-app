@@ -1,0 +1,106 @@
+h3 {
+  margin-left: 10px;
+}
+
+h2 {
+  margin-left: 20px;
+}
+
+.inspiration-articles {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-content: space-around;
+  justify-content: center;
+}
+
+.inspiration-articles img {
+  margin: 10px;
+  border-radius: 5%;
+}
+
+.backpacking-container {
+  position: relative;
+  text-align: left;
+  color: black;
+  width: 300px;
+}
+
+.backpacking-container img {
+  width: 300px;
+}
+
+.backpacking-text {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.cheapest-container {
+  position: relative;
+  text-align: left;
+  color: black;
+  width: 300px;
+}
+
+.cheapest-container img {
+  width: 300px;
+}
+
+.cheapest-text {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.vacc-container {
+  position: relative;
+  text-align: left;
+  color: black;
+  width: 300px;
+}
+
+.vacc-container img {
+  width: 300px;
+  height: 200px;
+}
+
+.vacc-text {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.getlost-container {
+  position: relative;
+  text-align: left;
+  color: black;
+  width: 300px;
+}
+
+.getlost-container img {
+  width: 300px;
+}
+
+.getlost-text {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.bestbooks-container {
+  position: relative;
+  text-align: left;
+  color: black;
+  width: 300px;
+}
+
+.bestbooks-container img {
+  width: 300px;
+}
+
+.bestbooks-text {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}

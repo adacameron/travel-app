@@ -1,9 +1,11 @@
+/* eslint-disable no-console */
 import React from "react";
 import PropTypes from "prop-types";
 import "../styles/flightsummary.css";
 
 const FlightSummary = (props) => {
   const { destination, price, onSelect, photo } = props;
+
   return (
     <div className="flight-summary">
       <div className="flight-summary__image">

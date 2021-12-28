@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/SearchFlight.css";
 import PropTypes from "prop-types";
 import Footer from "./Footer";
+import InspirationArticles from "./InspirationArticles";
 
 const SearchFlight = ({
   searchText,
@@ -184,6 +185,7 @@ const SearchFlight = ({
           </form>
         </div>
       </div>
+      <InspirationArticles />
       <Footer />
     </>
   );
