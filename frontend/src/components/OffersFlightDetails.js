@@ -2,18 +2,20 @@ import React, { useState } from "react";
 import "../styles/inspirationflightdetails.css";
 import flightsymbol from "../assets/flightsymbol.svg";
 import madrid from "../assets/madrid.jpg";
-import BookingDetailsNav from "./BookingDetailsNav";
+import FlightDetailsNav from "./FlightDetailsNav";
 import BookingForm from "./BookingForm";
 
 const OffersFlightDetails = () => {
+  const [showFlightDetailsNav, setShowFlightDetailsNav] = useState(true);
   const [showForm, setShowForm] = useState(false);
   function buttonConfirm() {
     setShowForm(true);
+    setShowFlightDetailsNav(false);
   }
   return (
     <>
       <>
-        <BookingDetailsNav />
+        <>{showFlightDetailsNav && <FlightDetailsNav />}</>
         {showForm ? (
           <BookingForm />
         ) : (

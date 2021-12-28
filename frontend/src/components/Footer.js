@@ -25,9 +25,17 @@ const Footer = () => {
           </ul>
         </div>
         <div className="social-media">
-          <img src={github} alt="Github Icon" />
-          <img src={twitter} alt="Twitter Icon" />
-          <img src={instagram} alt="Instagram Icon" />
+          <img src={github} alt="Github Icon" className="footer-social-icon" />
+          <img
+            src={twitter}
+            alt="Twitter Icon"
+            className="footer-social-icon"
+          />
+          <img
+            src={instagram}
+            alt="Instagram Icon"
+            className="footer-social-icon"
+          />
         </div>
       </div>
       <div className="footer-h2">

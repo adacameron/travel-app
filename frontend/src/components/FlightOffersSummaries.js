@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React from "react";
 import PropTypes from "prop-types";
 import FlightOffersSummary from "./FlightOffersSummary";
@@ -13,8 +12,6 @@ const FlightOffersSummaries = ({
   onFlightSelect,
   originData,
 }) => {
-  console.log(photos, "photos");
-  console.log(destinationData, "destinationData");
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
@@ -26,7 +23,6 @@ const FlightOffersSummaries = ({
       destination: destinationData,
     };
   });
-  console.log("dataAnd Photos", dataAndPhotos);
   return (
     <>
       <div className="flight-details-card">
