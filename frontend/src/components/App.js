@@ -158,14 +158,6 @@ const App = ({ airports }) => {
           }
         />
 
-        {/* <>
-          <ForecastSummaries
-            forecasts={forecasts}
-            onForecastSelect={handleForecastSelect}
-          />
-          {selectedForecast && <ForecastDetails forecast={selectedForecast} />}
-        </> */}
-
         <Route
           path="/inspiration-flight-details"
           element={
