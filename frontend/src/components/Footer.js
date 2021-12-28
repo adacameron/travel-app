@@ -8,7 +8,7 @@ import instagram from "../assets/instagram.svg";
 const Footer = () => {
   return (
     <div className="footer">
-      <div className="container">
+      <div className="footer_container">
         <div className="footer-links">
           <ul className="footer-links-list">
             <li className="footer-links-item">
