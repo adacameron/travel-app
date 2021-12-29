@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import PropTypes from "prop-types";
 import FlightOffersSummary from "./FlightOffersSummary";
@@ -28,7 +29,6 @@ const FlightOffersSummaries = ({
       <div className="flight-details-card">
         <FlightDatesDeparture
           originData={originData}
-          // eslint-disable-next-line react/prop-types
           passengers={Object.keys(data[0].travelerPricings).length}
           destinationData={destinationData}
           departureDate={departureDate}
