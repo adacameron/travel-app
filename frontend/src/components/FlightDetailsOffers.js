@@ -5,7 +5,7 @@ import madrid from "../assets/madrid.jpg";
 import FlightDetailsNav from "./FlightDetailsNav";
 import BookingForm from "./BookingForm";
 
-const OffersFlightDetails = () => {
+const FlightDetailsOffers = () => {
   const [showFlightDetailsNav, setShowFlightDetailsNav] = useState(true);
   const [showForm, setShowForm] = useState(false);
   function buttonConfirm() {
@@ -54,4 +54,4 @@ const OffersFlightDetails = () => {
     </>
   );
 };
-export default OffersFlightDetails;
+export default FlightDetailsOffers;
