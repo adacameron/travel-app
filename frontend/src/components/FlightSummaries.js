@@ -4,13 +4,7 @@ import FlightSummary from "./FlightSummary";
 import "../styles/flightsummaries.css";
 import FlightInspDatesDep from "./FlightInspDatesDep";
 
-const FlightSummaries = ({
-  data,
-  onFlightSelect,
-  photos,
-  inspOriginData,
-  airports,
-}) => {
+const FlightSummaries = ({ data, onFlightSelect, photos, inspOriginData }) => {
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
@@ -26,10 +20,7 @@ const FlightSummaries = ({
   return (
     <>
       <div className="flight-details-card">
-        <FlightInspDatesDep
-          inspOriginData={inspOriginData}
-          airports={airports}
-        />
+        <FlightInspDatesDep inspOriginData={inspOriginData} />
       </div>
       <div className="flight-summaries">
         {dataAndPhotos.map((flight) => (
@@ -47,12 +38,6 @@ const FlightSummaries = ({
 };
 
 FlightSummaries.propTypes = {
-  airports: PropTypes.arrayOf(
-    PropTypes.shape({
-      itineraries: PropTypes.string,
-      iataCode: PropTypes.string,
-    })
-  ).isRequired,
   data: PropTypes.arrayOf(
     PropTypes.shape({
       destination: PropTypes.string,

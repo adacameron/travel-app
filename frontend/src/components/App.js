@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import PropTypes from "prop-types";
 import "../styles/App.css";
 import SearchFlight from "./SearchFlight";
 import NavBar from "./NavBar";
@@ -15,12 +14,10 @@ import getOriginLocation from "../requests/getOriginLocation";
 import getInspOrigin from "../requests/getInspOrigin";
 import getInspirationSearch from "../requests/getInspirationSearch";
 
-const App = ({ airports }) => {
+const App = () => {
   const navigate = useNavigate();
 
-  // IMAGES API //
   const [images, setImages] = useState("");
-  // FLIGHT OFFERS API //
   const [searchText, setSearchText] = useState("");
   const [locationCode, setLocationCode] = useState("");
   const [departureDate, setDepartureDate] = useState("");
@@ -28,7 +25,6 @@ const App = ({ airports }) => {
   const [flightResults, setFlightResults] = useState([]);
   const [destinationData, setDestinationData] = useState([]);
   const [originData, setOriginData] = useState([]);
-  // FLIGHT INSPIRATION API //
   const [origin, setOrigin] = useState("");
   const [inspDepartureDate, setInspDepartureDate] = useState("");
   const [days, setDays] = useState(0);
@@ -123,7 +119,6 @@ const App = ({ airports }) => {
               data={inspirationResults}
               photos={images}
               inspOriginData={inspOriginData}
-              airports={airports}
               onFlightSelect={handleInspirationSelect}
             />
           }
@@ -167,15 +162,6 @@ const App = ({ airports }) => {
       </Routes>
     </>
   );
-};
-
-App.propTypes = {
-  airports: PropTypes.arrayOf(
-    PropTypes.shape({
-      itineraries: PropTypes.string,
-      iataCode: PropTypes.string,
-    })
-  ).isRequired,
 };
 
 export default App;
