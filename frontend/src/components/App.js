@@ -6,14 +6,14 @@ import SearchFlight from "./SearchFlight";
 import NavBar from "./NavBar";
 import FlightSummaries from "./FlightSummaries";
 import FlightOffersSummaries from "./FlightOffersSummaries";
-import InspirationFlightDetails from "./InspirationFlightDetails";
+import FlightDetailsInspiration from "./FlightDetailsInspiration";
+import FlightDetailsOffers from "./FlightDetailsOffers";
 import getOffersSearch from "../requests/getOffersSearch";
 import getImages from "../requests/getImages";
 import getLocation from "../requests/getLocation";
 import getOriginLocation from "../requests/getOriginLocation";
 import getInspOrigin from "../requests/getInspOrigin";
 import getInspirationSearch from "../requests/getInspirationSearch";
-import OffersFlightDetails from "./OffersFlightDetails";
 
 const App = ({ airports }) => {
   const navigate = useNavigate();
@@ -152,7 +152,7 @@ const App = ({ airports }) => {
           element={
             <>
               {selectedOffersFlight && (
-                <OffersFlightDetails data={selectedOffersFlight} />
+                <FlightDetailsOffers data={selectedOffersFlight} />
               )}
             </>
           }
@@ -163,7 +163,7 @@ const App = ({ airports }) => {
           element={
             <>
               {selectedInspFlight && (
-                <InspirationFlightDetails data={selectedInspFlight} />
+                <FlightDetailsInspiration data={selectedInspFlight} />
               )}
             </>
           }

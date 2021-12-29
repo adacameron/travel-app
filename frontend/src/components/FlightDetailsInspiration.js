@@ -6,7 +6,7 @@ import FlightDetailsInspNav from "./FlightDetailsInspNav";
 import BookingForm from "./BookingForm";
 import Footer from "./Footer";
 
-const InspirationFlightDetails = () => {
+const FlightDetailsInspiration = () => {
   const [showFlightDetailsInspNav, setShowFlightDetailsInspNav] =
     useState(true);
   const [showForm, setShowForm] = useState(false);
@@ -61,4 +61,4 @@ const InspirationFlightDetails = () => {
   );
 };
 
-export default InspirationFlightDetails;
+export default FlightDetailsInspiration;

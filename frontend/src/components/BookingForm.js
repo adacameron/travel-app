@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../styles/bookingform.css";
-// import travelImage from "../assets/travelbookingform.jpg";
 import BookingDetailsNav from "./BookingDetailsNav";
 
 const BookingForm = () => {
@@ -50,7 +49,6 @@ const BookingForm = () => {
     <>
       <BookingDetailsNav />
       <div className="container-image">
-        {/* <img src={travelImage} alt="Travel" /> */}
         <div className="form-container">
           <form action="" className="register-form" onSubmit={handleSubmit}>
             {submitted && valid ? (
