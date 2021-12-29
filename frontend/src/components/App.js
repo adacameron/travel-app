@@ -45,14 +45,10 @@ const App = ({ airports }) => {
       adults
     );
     setFlightResults(results);
-    // API call to change airport code to city name
     const location = await getLocation(locationCode);
-    // passing city name to Pexels API to search images
     const imageResults = await getImages(location);
     setImages(imageResults);
-    // API call to change airport code to city name
     const destinationResults = await getLocation(locationCode);
-    // passing city name to FlightOffersSummaries & FlightDatesDeparture
     setDestinationData(destinationResults);
     const originResults = await getOriginLocation(searchText);
     setOriginData(originResults);
