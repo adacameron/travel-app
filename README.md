@@ -27,19 +27,11 @@ To install FlyMe, clone the repo and install the dependencies:
 
 `git clone git@github.com:adacameron/travel-app.git`
 
-`cd travel-app`
+`cd travel-app && npm i`
 
-`npm i`
+`cd frontend && npm i`
 
-
-`cd frontend`
-
-`npm i`
-
-
-`cd backend`
-
-`npm i`
+`cd .. && cd backend && npm i`
 
 Generate your API keys, both available for free:
 
