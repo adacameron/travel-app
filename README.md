@@ -41,7 +41,7 @@ To install FlyMe, clone the repo and install the dependencies:
 
 `npm i`
 
-### Generate your API keys, both available for free:
+Generate your API keys, both available for free:
 
 [Amadeus](https://developers.amadeus.com/get-started/get-started-with-self-service-apis-335)
 
@@ -53,7 +53,7 @@ CLIENT_SECRET
 
 API_KEY
 
-### Create a .env file and save your keys as environment variables:
+Create a .env file and save your keys as environment variables:
 
 `cd backend`
 
@@ -71,7 +71,7 @@ Run the app in development mode:
 
 `npm run dev`
 
-#### Flight Router
+### Flight Router
 `/nonstop=true/:origin/:location/:departure/:adults/`
 
 flightOffersSearch returns specific flights based on:
