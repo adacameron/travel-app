@@ -44,10 +44,13 @@ To install FlyMe, clone the repo and install the dependencies:
 Generate your API keys, both available for free:
 
 [Amadeus](https://developers.amadeus.com/get-started/get-started-with-self-service-apis-335)
+
 CLIENT_ID
+
 CLIENT_SECRET
 
 [Pexels](https://www.pexels.com/api/)
+
 API_KEY
 
 Create a .env file and save your keys as environment variables:
@@ -55,11 +58,15 @@ Create a .env file and save your keys as environment variables:
 `cd backend`
 
 e.g: 
+
 CLIENT_ID=dSaSwke9fDDFRT71YfGHH09KyxcRYmy20
+
 CLIENT_SECRET=KLpkDDLdffwO3k90
+
 API_KEY=563492pd6f9178272727272115f52fjfb57948059d2222d92366cfsd
 
 Run the app in development mode:
+
 `cd travel-app`
 
 `npm run dev`
