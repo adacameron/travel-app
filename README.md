@@ -35,10 +35,11 @@ $ cd .. && cd backend && npm i
 Generate your API keys, both available for free:
 
 [Amadeus](https://developers.amadeus.com/get-started/get-started-with-self-service-apis-335)
-CLIENT_ID
-CLIENT_SECRET
-[Pexels](https://www.pexels.com/api/)
-API_KEY
+<li>CLIENT_ID</li>
+<li>CLIENT_SECRET</li>
+
+[Pexels](https://www.pexels.com/api/)</li>
+<li>API_KEY</li>
 
 Create a .env file and save your keys as environment variables:
 
@@ -47,25 +48,33 @@ cd backend
 ```
 
 e.g: 
+
 CLIENT_ID=dSaSwke9fDDFRT71YfGHH09KyxcRYmy20
+
 CLIENT_SECRET=KLpkDDLdffwO3k90
+
 API_KEY=563492pd6f9178272727272115f52fjfb57948059d2222d92366cfsd
 
 Run the app in development mode:
+
 ```sh
 $ cd travel-app
 $ npm run dev
 ```
 
 ### Flight Router
+
 `/nonstop=true/:origin/:location/:departure/:adults/`
+
 flightOffersSearch returns specific flights based on:
 - user origin
 - desired destination
 - date of travel
 - number of passengers
 
+
 `/flights/nonstop=true/:origin/:departure/:days/:maxPrice`
+
 flightDestinations returns a list of 'inspiration' destinations based on:
 - user origin
 - date of travel
