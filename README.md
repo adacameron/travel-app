@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# FlyMe
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## The Travel Inpsiration App
 
-## Available Scripts
+With FlyMe users can search for available flights based on their budget, desired location, and trip duration. Our app also provides additional resources to help inspire a destination choice. 
+ 
+FlyMe was created by [Ada Cameron](https://github.com/adacameron), [Mustafa Mohammed](https://github.com/mustafamohamed-web) and [Khalid Safy](https://github.com/DaXian88).
 
-In the project directory, you can run:
+Technologies used include: React, Express, Node.js, Axios, HTML & CSS, and Javascript.  
 
-### `npm start`
+### Features in progress
+<ul> 
+    <li>A budget feature that allows users bundle all their choices and track their budget in real time.</li>
+    <li>Safety ratings (crime and health) for each location.</li>
+     <li>Hotel and activity search functionality</li>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+</ul>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## About FlyMe
 
-### `npm test`
+FlyMe runs from a combined backend and frontend repo.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The frontend was created using [Create React App](https://github.com/facebook/create-react-app).
+The backend uses [Express.js](https://expressjs.com/).
 
-### `npm run build`
+To install FlyMe, clone the repo and install the dependencies:
+```sh
+$ git clone git@github.com:adacameron/travel-app.git
+$ cd travel-app && npm i
+$ cd frontend && npm i
+$ cd .. && cd backend && npm i
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Generate your API keys, both available for free:
+[Amadeus](https://developers.amadeus.com/get-started/get-started-with-self-service-apis-335)
+<li>CLIENT_ID</li>
+<li>CLIENT_SECRET</li>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[Pexels](https://www.pexels.com/api/)
+<li>API_KEY</li>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Create a .env file and save your keys as environment variables:
 
-### `npm run eject`
+```sh
+cd backend
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+e.g: 
+CLIENT_ID=dSaSwke9fDDFRT71YfGHH09KyxcRYmy20
+CLIENT_SECRET=KLpkDDLdffwO3k90
+API_KEY=563492pd6f9178272727272115f52fjfb57948059d2222d92366cfsd
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Run the app in development mode:
+```sh
+$ cd travel-app
+$ npm run dev
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Flight Router
+`/nonstop=true/:origin/:location/:departure/:adults/`
+flightOffersSearch returns specific flights based on:
+- user origin
+- desired destination
+- date of travel
+- number of passengers
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+`/flights/nonstop=true/:origin/:departure/:days/:maxPrice`
+flightDestinations returns a list of 'inspiration' destinations based on:
+- user origin
+- date of travel
+- duration of trip
+- budget
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
