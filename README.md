@@ -43,7 +43,7 @@ Generate your API keys, both available for free:
 - API_KEY
 
 
-In the root of the `backend` folder, create a .env file and save your keys as environment variables:
+In the root of the `backend` folder, create a `.env` file and save your keys as environment variables:
 
 e.g: 
 
