@@ -24,14 +24,21 @@ The frontend was created using [Create React App](https://github.com/facebook/cr
 The backend uses [Express.js](https://expressjs.com/).
 
 To install FlyMe, clone the repo and install the dependencies:
+
 `git clone git@github.com:adacameron/travel-app.git`
+
 `cd travel-app`
+
 `npm i`
+
 
 `cd frontend`
+
 `npm i`
 
+
 `cd backend`
+
 `npm i`
 
 Generate your API keys, both available for free:
@@ -39,12 +46,14 @@ Generate your API keys, both available for free:
 [Amadeus](https://developers.amadeus.com/get-started/get-started-with-self-service-apis-335)
 CLIENT_ID
 CLIENT_SECRET
+
 [Pexels](https://www.pexels.com/api/)
 API_KEY
 
 Create a .env file and save your keys as environment variables:
 
 `cd backend`
+
 e.g: 
 CLIENT_ID=dSaSwke9fDDFRT71YfGHH09KyxcRYmy20
 CLIENT_SECRET=KLpkDDLdffwO3k90
@@ -52,10 +61,12 @@ API_KEY=563492pd6f9178272727272115f52fjfb57948059d2222d92366cfsd
 
 Run the app in development mode:
 `cd travel-app`
+
 `npm run dev`
 
 ### Flight Router
 `/nonstop=true/:origin/:location/:departure/:adults/`
+
 flightOffersSearch returns specific flights based on:
 - user origin
 - desired destination
@@ -63,6 +74,7 @@ flightOffersSearch returns specific flights based on:
 - number of passengers
 
 `/flights/nonstop=true/:origin/:departure/:days/:maxPrice`
+
 flightDestinations returns a list of 'inspiration' destinations based on:
 - user origin
 - date of travel
