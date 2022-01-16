@@ -1,0 +1,138 @@
+.navbar {
+  background-color: white;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  width: 80vw;
+}
+
+.navbar_container {
+  width: 100vw;
+  background-color: #dadaf7;
+  height: 150px;
+}
+
+.navbar-logo-h1 {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin: -74px 436px -54px 1px;
+}
+
+.navbar-logo {
+  margin-left: 245px;
+  margin-top: 10px;
+  height: 84px;
+}
+
+.navbar h1 {
+  font-size: 2em;
+  letter-spacing: 0.8rem;
+  font-family: "Yeseva One", cursive;
+  font-style: italic;
+  padding-left: 19px;
+}
+
+.icons {
+  margin-top: -30px;
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.icons img {
+  margin-left: 30px;
+  height: 40px;
+  margin-top: 57px;
+  padding: 2px 2px 2px 10px;
+}
+
+.navbar-links {
+  margin: 0;
+  margin-left: 339px;
+  margin-bottom: 6px;
+  padding-top: 20px;
+  display: flex;
+}
+
+.navbar-links-list {
+  margin-bottom: 0;
+  padding-left: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.navbar-links-item {
+  margin: 0;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: 0.3rem;
+  padding: 0.3rem 0.75rem;
+}
+
+.navbar-links-item a {
+  text-decoration: none;
+  color: white;
+  background-color: #190933;
+  padding: 12px;
+  border-top-right-radius: 10px;
+}
+
+.navbar-links-item :hover,
+.navbar-links-item--active {
+  background-color: #3e3e92;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .navbar_container {
+    width: 415px;
+    height: 130px;
+  }
+  .navbar-logo-h1 {
+    margin: -77px 20px -9px 43px;
+    display: flex;
+    align-items: baseline;
+    padding: 1px 1px 1px 339px;
+  }
+  .navbar {
+    margin: 0;
+    margin-top: 5px;
+    margin-bottom: 6px;
+    padding: 0;
+  }
+  .navbar-links {
+    margin-left: 60px;
+    margin-bottom: 10px;
+  }
+  .navbar-links-item {
+    display: inline;
+    padding: 1px;
+    font-size: 0.84em;
+  }
+
+  .navbar-logo {
+    margin-left: 30px;
+    height: 38px;
+  }
+
+  .icons {
+    display: inline;
+    margin-top: -80px;
+    margin-left: 1px;
+  }
+
+  .icons img {
+    margin-left: 54px;
+    height: 35px;
+    margin-top: 52px;
+    margin-bottom: 3px;
+  }
+  .icons-user {
+    display: none;
+  }
+}
+

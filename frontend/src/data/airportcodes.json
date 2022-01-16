@@ -1,0 +1,44 @@
+{
+    "airports": [
+        {
+            "city": "Barcelona",
+            "iataCode": "BCN"
+        },
+        {
+            "city": "Amsterdam",
+            "iataCode": "AMS"
+        },
+        {
+            "city": "Istanbul",
+            "iataCode": "SAW"
+        },
+        {
+            "city": "Lisbon",
+            "iataCode": "LIS"
+        },
+        {
+            "city": "Berlin",
+            "iataCode": "BER"
+        },
+        {
+            "city": "Madrid",
+            "iataCode": "MAD"
+        },
+        {
+            "city": "Athens",
+            "iataCode": "ATH"
+        },
+        {
+            "city": "Milan",
+            "iataCode": "LIN"
+        },
+        {
+            "city": "Edinburgh",
+            "iataCode": "EDI"
+        },
+        {
+            "city": "Rome",
+            "iataCode": "FCO"
+        }
+    ]
+}

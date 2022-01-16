@@ -1,0 +1,37 @@
+/* .search-form-container {
+  margin-top: -2px;
+  margin-left: 98px;
+  padding: 20px;
+  background-color: rgb(62, 62, 146);
+  width: fit-content;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  color: white;
+} */
+
+input {
+  border: 1px solid;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.destination-input-box {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.check-in-input-box {
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.check-out-input-box {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.form-label {
+  display: inline-block;
+}
