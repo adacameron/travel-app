@@ -39,7 +39,8 @@ Generate your API keys, both available for free:
 <li>CLIENT_SECRET</li>
 
 
-[Pexels](https://www.pexels.com/api/)</li>
+
+[Pexels](https://www.pexels.com/api/)
 <li>API_KEY</li>
 
 
