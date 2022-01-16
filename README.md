@@ -24,6 +24,7 @@ The frontend was created using [Create React App](https://github.com/facebook/cr
 The backend uses [Express.js](https://expressjs.com/).
 
 To install FlyMe, clone the repo and install the dependencies:
+
 ```sh
 $ git clone git@github.com:adacameron/travel-app.git
 $ cd travel-app && npm i
@@ -70,5 +71,3 @@ flightDestinations returns a list of 'inspiration' destinations based on:
 - date of travel
 - duration of trip
 - budget
-
-
