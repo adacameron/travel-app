@@ -35,13 +35,12 @@ $ cd .. && cd backend && npm i
 Generate your API keys, both available for free:
 
 [Amadeus](https://developers.amadeus.com/get-started/get-started-with-self-service-apis-335)
-<li>CLIENT_ID</li>
-<li>CLIENT_SECRET</li>
-
+- CLIENT_ID
+- CLIENT_SECRET
 
 
 [Pexels](https://www.pexels.com/api/)
-<li>API_KEY</li>
+- API_KEY
 
 
 In the root of the `backend` folder, create a .env file and save your keys as environment variables:
