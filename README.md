@@ -38,22 +38,23 @@ Generate your API keys, both available for free:
 <li>CLIENT_ID</li>
 <li>CLIENT_SECRET</li>
 
+
 [Pexels](https://www.pexels.com/api/)</li>
 <li>API_KEY</li>
 
-Create a .env file and save your keys as environment variables:
 
-```sh
-cd backend
-```
+In the root of the `backend` folder, create a .env file and save your keys as environment variables:
 
 e.g: 
 
+```sh
 CLIENT_ID=dSaSwke9fDDFRT71YfGHH09KyxcRYmy20
 
 CLIENT_SECRET=KLpkDDLdffwO3k90
 
 API_KEY=563492pd6f9178272727272115f52fjfb57948059d2222d92366cfsd
+```
+
 
 Run the app in development mode:
 
